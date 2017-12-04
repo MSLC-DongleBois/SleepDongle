@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     //MARK: class variables
     let activityManager = CMMotionActivityManager()
+    let cmManager = CoreMotionManager()
     let pedometer = CMPedometer()
     let activityLabels = ["🚗": "Driving", "🚴": "Cycling", "🏃": "Running", "🚶": "Walking", "👨‍💻":  "Stationary", "🤷‍♂️": "Unknown", "🕵": "Detecting activity..."];
     var stepGoal: String = "0"
@@ -79,6 +80,11 @@ class ViewController: UIViewController {
             // update from this queue (should we use the MAIN queue here??.... )
             self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: self.handleActivity)
         }
+        
+        cmManager.startReceivingAccelUpdates(interval: 0.5, completion: { (data, error) in
+            if (data != nil)
+                {NSLog(data.debugDescription)}
+            })
     }
     
     func handleActivity(_ activity:CMMotionActivity?)->Void{

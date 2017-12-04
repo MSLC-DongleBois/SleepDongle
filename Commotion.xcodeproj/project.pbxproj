@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68815B381FD5F2C100BDA423 /* CoreMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68815B371FD5F2C100BDA423 /* CoreMotionManager.swift */; };
 		B62ED3A31D7F299D00B503DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62ED3A21D7F299D00B503DF /* AppDelegate.swift */; };
 		B62ED3A81D7F299D00B503DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62ED3A61D7F299D00B503DF /* Main.storyboard */; };
 		B62ED3AA1D7F299D00B503DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B62ED3A91D7F299D00B503DF /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68815B371FD5F2C100BDA423 /* CoreMotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionManager.swift; sourceTree = "<group>"; };
 		B62ED39F1D7F299D00B503DF /* Commotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Commotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62ED3A21D7F299D00B503DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B62ED3A71D7F299D00B503DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				B62ED3AE1D7F299D00B503DF /* Info.plist */,
 				FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */,
 				FBF205A51FD5EE040019A7D1 /* ViewController.swift */,
+				68815B371FD5F2C100BDA423 /* CoreMotionManager.swift */,
 			);
 			path = Commotion;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */,
 				B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */,
 				B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */,
+				68815B381FD5F2C100BDA423 /* CoreMotionManager.swift in Sources */,
 				B62ED3A31D7F299D00B503DF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

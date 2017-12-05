@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Commotion
+//  SleepDongle
 //
 //  Created by Eric Larson on 9/6/16.
 //  Copyright © 2016 Eric Larson. All rights reserved.

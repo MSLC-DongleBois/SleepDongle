@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		120CF5329CB53C2915C74039 /* Pods_Commotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E2355F106CE9675D832C0F /* Pods_Commotion.framework */; };
-		68815B381FD5F2C100BDA423 /* CoreMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68815B371FD5F2C100BDA423 /* CoreMotionManager.swift */; };
 		B62ED3A31D7F299D00B503DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62ED3A21D7F299D00B503DF /* AppDelegate.swift */; };
 		B62ED3A81D7F299D00B503DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62ED3A61D7F299D00B503DF /* Main.storyboard */; };
 		B62ED3AA1D7F299D00B503DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B62ED3A91D7F299D00B503DF /* Assets.xcassets */; };
@@ -17,9 +15,14 @@
 		B62ED3C31D7F299D00B503DF /* CommotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62ED3C21D7F299D00B503DF /* CommotionUITests.swift */; };
 		B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B9D491D7F6EA8002037A3 /* GameViewController.swift */; };
 		B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */; };
-		D974F6B61FD7049D0057BE26 /* AustinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D974F6B51FD7049D0057BE26 /* AustinStoryboard.storyboard */; };
 		FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */; };
 		FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A51FD5EE040019A7D1 /* ViewController.swift */; };
+		FBF205A81FD5F3380019A7D1 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */; };
+		FBF205AA1FD5F3FD0019A7D1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */; };
+		FBF205AC1FD5F4CB0019A7D1 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */; };
+		FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */; };
+		FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */; };
+		FBF205B21FD7003D0019A7D1 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205B11FD7003D0019A7D1 /* PageContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		68815B371FD5F2C100BDA423 /* CoreMotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionManager.swift; sourceTree = "<group>"; };
-		6C673C99420C2BBFBDF3399E /* Pods-Commotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Commotion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Commotion/Pods-Commotion.release.xcconfig"; sourceTree = "<group>"; };
 		B62ED39F1D7F299D00B503DF /* Commotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Commotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62ED3A21D7F299D00B503DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B62ED3A71D7F299D00B503DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,11 +57,14 @@
 		B62ED3C41D7F299D00B503DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68B9D491D7F6EA8002037A3 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		D974F6B51FD7049D0057BE26 /* AustinStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AustinStoryboard.storyboard; sourceTree = "<group>"; };
-		F6A272732090D02488BD714E /* Pods-Commotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Commotion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Commotion/Pods-Commotion.debug.xcconfig"; sourceTree = "<group>"; };
-		F6E2355F106CE9675D832C0F /* Pods_Commotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Commotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FBF205A51FD5EE040019A7D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemViewController.swift; sourceTree = "<group>"; };
+		FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		FBF205B11FD7003D0019A7D1 /* PageContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				120CF5329CB53C2915C74039 /* Pods_Commotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,23 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		692AA238F5FFF5485F10312F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F6E2355F106CE9675D832C0F /* Pods_Commotion.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9CC95275678385D0DEF2641B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F6A272732090D02488BD714E /* Pods-Commotion.debug.xcconfig */,
-				6C673C99420C2BBFBDF3399E /* Pods-Commotion.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		B62ED3961D7F299D00B503DF = {
 			isa = PBXGroup;
 			children = (
@@ -113,8 +99,6 @@
 				B62ED3B61D7F299D00B503DF /* CommotionTests */,
 				B62ED3C11D7F299D00B503DF /* CommotionUITests */,
 				B62ED3A01D7F299D00B503DF /* Products */,
-				9CC95275678385D0DEF2641B /* Pods */,
-				692AA238F5FFF5485F10312F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,13 +119,17 @@
 				B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */,
 				B68B9D491D7F6EA8002037A3 /* GameViewController.swift */,
 				B62ED3A61D7F299D00B503DF /* Main.storyboard */,
-				D974F6B51FD7049D0057BE26 /* AustinStoryboard.storyboard */,
 				B62ED3A91D7F299D00B503DF /* Assets.xcassets */,
 				B62ED3AB1D7F299D00B503DF /* LaunchScreen.storyboard */,
 				B62ED3AE1D7F299D00B503DF /* Info.plist */,
 				FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */,
 				FBF205A51FD5EE040019A7D1 /* ViewController.swift */,
-				68815B371FD5F2C100BDA423 /* CoreMotionManager.swift */,
+				FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */,
+				FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */,
+				FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */,
+				FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */,
+				FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */,
+				FBF205B11FD7003D0019A7D1 /* PageContentViewController.swift */,
 			);
 			path = Commotion;
 			sourceTree = "<group>";
@@ -171,12 +159,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B62ED3C71D7F299D00B503DF /* Build configuration list for PBXNativeTarget "Commotion" */;
 			buildPhases = (
-				9C781752A4E8A91FB3674DE1 /* [CP] Check Pods Manifest.lock */,
 				B62ED39B1D7F299D00B503DF /* Sources */,
 				B62ED39C1D7F299D00B503DF /* Frameworks */,
 				B62ED39D1D7F299D00B503DF /* Resources */,
-				C33C6E458EE73025E0DBFF75 /* [CP] Embed Pods Frameworks */,
-				D492ACE515DCF10244A02250 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,7 +220,7 @@
 				TargetAttributes = {
 					B62ED39E1D7F299D00B503DF = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 49M97733LM;
+						DevelopmentTeam = F69WJ27LN4;
 						LastSwiftMigration = 0900;
 					};
 					B62ED3B21D7F299D00B503DF = {
@@ -278,7 +263,6 @@
 				B62ED3AD1D7F299D00B503DF /* LaunchScreen.storyboard in Resources */,
 				B62ED3AA1D7F299D00B503DF /* Assets.xcassets in Resources */,
 				B62ED3A81D7F299D00B503DF /* Main.storyboard in Resources */,
-				D974F6B61FD7049D0057BE26 /* AustinStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,70 +282,21 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		9C781752A4E8A91FB3674DE1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Commotion-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C33C6E458EE73025E0DBFF75 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Commotion/Pods-Commotion-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Commotion/Pods-Commotion-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D492ACE515DCF10244A02250 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Commotion/Pods-Commotion-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B62ED39B1D7F299D00B503DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF205AC1FD5F4CB0019A7D1 /* AlarmViewController.swift in Sources */,
+				FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */,
 				FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */,
 				FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */,
 				B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */,
+				FBF205B21FD7003D0019A7D1 /* PageContentViewController.swift in Sources */,
+				FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */,
+				FBF205A81FD5F3380019A7D1 /* TrackingViewController.swift in Sources */,
 				B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */,
-				68815B381FD5F2C100BDA423 /* CoreMotionManager.swift in Sources */,
+				FBF205AA1FD5F3FD0019A7D1 /* HistoryViewController.swift in Sources */,
 				B62ED3A31D7F299D00B503DF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,14 +454,13 @@
 		};
 		B62ED3C81D7F299D00B503DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6A272732090D02488BD714E /* Pods-Commotion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 49M97733LM;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KQ.Commotion;
+				PRODUCT_BUNDLE_IDENTIFIER = SMU.Commotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -535,14 +469,13 @@
 		};
 		B62ED3C91D7F299D00B503DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C673C99420C2BBFBDF3399E /* Pods-Commotion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 49M97733LM;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KQ.Commotion;
+				PRODUCT_BUNDLE_IDENTIFIER = SMU.Commotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

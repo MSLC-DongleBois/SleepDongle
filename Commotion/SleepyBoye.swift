@@ -47,7 +47,7 @@ class SleepyBoye: NSObject {
     }
     
     func getSleep() -> (remSleep: Int, deepSleep: Int, lightSleep: Int, awake: Int, start: Date, end: Date) {
-        return (remSleep, deepSleep, lightSleep, awake, startDate, endDate)
+        return (self.remSleep, self.deepSleep, self.lightSleep, self.awake, self.startDate, self.endDate)
     }
     
 }

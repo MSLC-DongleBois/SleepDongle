@@ -13,5 +13,5 @@ class NightyNight : NSObject
     var eventStart = Date()
     var eventEnd = Date()
     var alarmTime = Date()
-    var motionEvents = [100]
+    var motionEvents = [Int]()
 }

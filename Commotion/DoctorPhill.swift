@@ -25,7 +25,8 @@ class DoctorPhill : NSObject
     
     func createNight(start: Date, alarm: Date)
     {
-        
+        tonight.eventStart = start
+        tonight.alarmTime = alarm
         
     }
     
@@ -70,7 +71,8 @@ class DoctorPhill : NSObject
     
     func EndSession(end: Date) -> NightyNight
     {
-        return NightyNight()
+        tonight.eventEnd = end
+        return tonight
     }
     
 }

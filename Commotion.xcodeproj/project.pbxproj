@@ -16,6 +16,8 @@
 		B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B9D491D7F6EA8002037A3 /* GameViewController.swift */; };
 		B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */; };
 		DC309300EC9395B1C614F50B /* Pods_Commotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7959272720AE2D66BC688D8C /* Pods_Commotion.framework */; };
+		FB1417A31FD7099B00B41E39 /* CoreMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */; };
+		FB1417A51FD709A500B41E39 /* AustinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */; };
 		FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */; };
 		FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A51FD5EE040019A7D1 /* ViewController.swift */; };
 		FBF205A81FD5F3380019A7D1 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */; };
@@ -61,6 +63,8 @@
 		B68B9D491D7F6EA8002037A3 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E041550C4E1E55F90CBFD7BE /* Pods-Commotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Commotion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Commotion/Pods-Commotion.release.xcconfig"; sourceTree = "<group>"; };
+		FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreMotionManager.swift; sourceTree = "<group>"; };
+		FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AustinStoryboard.storyboard; sourceTree = "<group>"; };
 		FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FBF205A51FD5EE040019A7D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				B62ED3AE1D7F299D00B503DF /* Info.plist */,
 				FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */,
 				FBF205A51FD5EE040019A7D1 /* ViewController.swift */,
+				FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */,
+				FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */,
 				FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */,
 				FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */,
 				FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */,
@@ -290,6 +296,7 @@
 				B62ED3AD1D7F299D00B503DF /* LaunchScreen.storyboard in Resources */,
 				B62ED3AA1D7F299D00B503DF /* Assets.xcassets in Resources */,
 				B62ED3A81D7F299D00B503DF /* Main.storyboard in Resources */,
+				FB1417A51FD709A500B41E39 /* AustinStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +379,7 @@
 				FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */,
 				FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */,
 				FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */,
+				FB1417A31FD7099B00B41E39 /* CoreMotionManager.swift in Sources */,
 				B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */,
 				FBF205B21FD7003D0019A7D1 /* PageContentViewController.swift in Sources */,
 				FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02619F391FD7100C00C884C3 /* NightyNight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02619F381FD7100C00C884C3 /* NightyNight.swift */; };
+		68E0C7F01FD71A28006398F2 /* SleepyBoye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E0C7EF1FD71A28006398F2 /* SleepyBoye.swift */; };
 		B62ED3A31D7F299D00B503DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62ED3A21D7F299D00B503DF /* AppDelegate.swift */; };
 		B62ED3A81D7F299D00B503DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62ED3A61D7F299D00B503DF /* Main.storyboard */; };
 		B62ED3AA1D7F299D00B503DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B62ED3A91D7F299D00B503DF /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		02619F381FD7100C00C884C3 /* NightyNight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightyNight.swift; sourceTree = "<group>"; };
 		19CC39CD490DEB0159FBE2FF /* Pods-Commotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Commotion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Commotion/Pods-Commotion.debug.xcconfig"; sourceTree = "<group>"; };
+		68E0C7EF1FD71A28006398F2 /* SleepyBoye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepyBoye.swift; sourceTree = "<group>"; };
 		7959272720AE2D66BC688D8C /* Pods_Commotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Commotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62ED39F1D7F299D00B503DF /* Commotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Commotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62ED3A21D7F299D00B503DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */,
 				FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */,
 				FBF205B11FD7003D0019A7D1 /* PageContentViewController.swift */,
+				68E0C7EF1FD71A28006398F2 /* SleepyBoye.swift */,
 			);
 			path = Commotion;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */,
 				FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */,
 				FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */,
+				68E0C7F01FD71A28006398F2 /* SleepyBoye.swift in Sources */,
 				FB1417A31FD7099B00B41E39 /* CoreMotionManager.swift in Sources */,
 				B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */,
 				02619F391FD7100C00C884C3 /* NightyNight.swift in Sources */,

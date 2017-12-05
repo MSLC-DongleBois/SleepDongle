@@ -21,6 +21,8 @@
 		FBF205AA1FD5F3FD0019A7D1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */; };
 		FBF205AC1FD5F4CB0019A7D1 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */; };
 		FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */; };
+		FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */; };
+		FBF205B21FD7003D0019A7D1 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205B11FD7003D0019A7D1 /* PageContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemViewController.swift; sourceTree = "<group>"; };
+		FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		FBF205B11FD7003D0019A7D1 /* PageContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 				FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */,
 				FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */,
 				FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */,
+				FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */,
+				FBF205B11FD7003D0019A7D1 /* PageContentViewController.swift */,
 			);
 			path = Commotion;
 			sourceTree = "<group>";
@@ -282,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBF205AC1FD5F4CB0019A7D1 /* AlarmViewController.swift in Sources */,
+				FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */,
 				FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */,
 				FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */,
 				B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */,
+				FBF205B21FD7003D0019A7D1 /* PageContentViewController.swift in Sources */,
 				FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */,
 				FBF205A81FD5F3380019A7D1 /* TrackingViewController.swift in Sources */,
 				B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */,

@@ -13,6 +13,7 @@ import CoreMotion
 class CoreMotionManager: NSObject {
     
     let manager = CMMotionManager()
+    
     static var instance: CoreMotionManager?
     
     class func sharedManager() -> CoreMotionManager {

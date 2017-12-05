@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     //MARK: class variables
     let activityManager = CMMotionActivityManager()
     let cmManager = CoreMotionManager()
+    // accel values X, Y, Z
+    var accelX = 0.0
+    var accelY = 0.0
+    var accelZ = 0.0
     let pedometer = CMPedometer()
     let activityLabels = ["🚗": "Driving", "🚴": "Cycling", "🏃": "Running", "🚶": "Walking", "👨‍💻":  "Stationary", "🤷‍♂️": "Unknown", "🕵": "Detecting activity..."];
     var stepGoal: String = "0"
@@ -81,9 +85,23 @@ class ViewController: UIViewController {
             self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: self.handleActivity)
         }
         
-        cmManager.startReceivingAccelUpdates(interval: 0.5, completion: { (data, error) in
-            if (data != nil)
-                {NSLog(data.debugDescription)}
+        // interval param MUST match dt value for math to work out
+        cmManager.startReceivingAccelUpdates(interval: 0.05, completion: { (data, error) in
+            if (data != nil) {
+                NSLog(data.debugDescription)
+                // first attempt at low pass filtering
+                let RC = 0.15
+                // same value as interval
+                let dt = 0.05
+                let alpha = dt / (RC + dt)
+                let rawX = data?.acceleration.x
+                let rawY = data?.acceleration.y
+                let rawZ = data?.acceleration.z
+                self.accelX = rawX! * alpha + (1.0 - alpha) * self.accelX;
+                self.accelY = rawY! * alpha + (1.0 - alpha) * self.accelY;
+                self.accelZ = rawZ! * alpha + (1.0 - alpha) * self.accelZ;
+                print("X: ", String(self.accelX), "Y: ", String(self.accelY), "Z: ", String(self.accelZ))
+            }
             })
     }
     

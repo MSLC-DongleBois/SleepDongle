@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NightyNight
+class NightyNight : NSObject
 {
     var eventStart = Date()
     var eventEnd = Date()

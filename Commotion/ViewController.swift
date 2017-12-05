@@ -36,7 +36,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var todaysStepsLabel: UILabel!
     @IBOutlet weak var yesterdaysStepsLabel: UILabel!
     
-    @IBOutlet weak var stepsProgressBar: UIProgressView!
     @IBOutlet weak var stepGoalInput: UITextField!
     @IBOutlet weak var stepGoalSaveButton: UIButton!
     @IBOutlet weak var remainingStepsLabel: UILabel!
@@ -103,7 +102,7 @@ class ViewController: UIViewController {
                 self.accelZ = rawZ! * alpha + (1.0 - alpha) * self.accelZ;
                 print("X: ", String(self.accelX), "Y: ", String(self.accelY), "Z: ", String(self.accelZ))
             }
-            })
+        })
     }
     
     func handleActivity(_ activity:CMMotionActivity?)->Void{
@@ -147,8 +146,6 @@ class ViewController: UIViewController {
             let totalSteps = self.todaysSteps + steps.floatValue
             self.todaysStepsLabel.text = String(totalSteps)
             self.setRemainingSteps(newSteps: totalSteps)
-            self.stepsProgressBar.progress = totalSteps/Float(self.stepGoal)!
-            
         }
     }
     

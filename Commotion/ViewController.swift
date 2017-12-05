@@ -88,6 +88,7 @@ class ViewController: UIViewController {
         // interval param MUST match dt value for math to work out
         cmManager.startReceivingAccelUpdates(interval: 0.05, completion: { (data, error) in
             if (data != nil) {
+                // log raw data
                 NSLog(data.debugDescription)
                 // first attempt at low pass filtering
                 let RC = 0.15

@@ -11,6 +11,7 @@ import Foundation
 
 class SleepyBoye: NSObject {
     
+    // raw data
     var startDate: Date!
     var endDate: Date!
     var events = [Int]()
@@ -18,15 +19,25 @@ class SleepyBoye: NSObject {
     var lightSleep: Int!
     var awake: Int!
     
+    // calculated metrics
+    var deepSleepPercentage: Double!
+    var lightSleepPercentage: Double!
+    var awakePercentage: Double!
+    var sleepScore: Int!
+    
+    // constructor
     init(night: NightyNight) {
+        super.init()
         self.startDate = night.eventStart
         self.endDate = night.eventEnd
         self.events = night.motionEvents
         self.deepSleep = 0
         self.lightSleep = 0
         self.awake = 0
+        analyzeEvents()
     }
     
+    // categorical sleep analysis
     func analyzeEvents() {
         for event in self.events {
             if event < 5 {
@@ -41,6 +52,7 @@ class SleepyBoye: NSObject {
         }
     }
     
+    // return values
     func getSleep() -> (deepSleep: Int, lightSleep: Int, awake: Int, start: Date, end: Date) {
         return (self.deepSleep, self.lightSleep, self.awake, self.startDate, self.endDate)
     }

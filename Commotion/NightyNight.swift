@@ -22,6 +22,7 @@ class NightyNight : NSObject, NSCoding
         static let deepSleepPercentage = "deepSleepPercentage"
         static let lightSleepPercentage = "lightSleepPercentage"
         static let awakePercentage = "awakePercentage"
+        static let userClassification = "userClassification"
     }
     
     func encode(with aCoder: NSCoder) {
@@ -34,6 +35,7 @@ class NightyNight : NSObject, NSCoding
         aCoder.encode(deepSleepPercentage, forKey: PropertyKey.deepSleepPercentage)
         aCoder.encode(lightSleepPercentage, forKey: PropertyKey.lightSleepPercentage)
         aCoder.encode(awakePercentage, forKey: PropertyKey.awakePercentage)
+        aCoder.encode(userClassification, forKey: PropertyKey.userClassification)
     }
     
     override init() {
@@ -43,6 +45,15 @@ class NightyNight : NSObject, NSCoding
     required convenience init?(coder aDecoder: NSCoder) {
         self.init()
     }
+    
+    init(Start: Date, Score: Int, Classification: Int) {
+        super.init()
+        eventStart = Start
+        sleepScore = Score
+        userClassification = Classification
+    }
+    
+    
     
     // raw data values
     var eventStart = Date()
@@ -56,6 +67,6 @@ class NightyNight : NSObject, NSCoding
     var deepSleepPercentage: Double!
     var lightSleepPercentage: Double!
     var awakePercentage: Double!
-    var userClassification: String?
+    var userClassification: Int?
     
 }

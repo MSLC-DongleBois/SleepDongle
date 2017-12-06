@@ -21,7 +21,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         let pageContent: PageContentViewController = viewController as! PageContentViewController
         var index = pageContent.pageIndex
@@ -33,7 +33,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return getViewControllerAtIndex(index: index)
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
         let pageContent: PageContentViewController = viewController as! PageContentViewController
         var index = pageContent.pageIndex

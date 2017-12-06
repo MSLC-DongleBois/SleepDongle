@@ -16,7 +16,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        arrPageTitle = ["This is The App Guruz", "This is Table Tennis 3D", "This is Hide Secrets"];
+        arrPageTitle = ["This is The SleepyBoi", "This is Brutal Tennis 3D", "This is SPARTA"];
         self.dataSource = self
         self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     }

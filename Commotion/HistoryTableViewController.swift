@@ -90,36 +90,23 @@ class HistoryTableViewController: UITableViewController {
     }
     */
     
-//    override func tableView(_ tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-//
-//        var moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "More", handler:{action, indexpath in
-//            println("MORE•ACTION");
-//        });
-//        moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
-//
-//        var deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{action, indexpath in
-//            println("DELETE•ACTION");
-//        });
-//
-//        return [deleteRowAction, moreRowAction];
-//    }
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
-        let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
-            print("more button tapped")
+        let poor = UITableViewRowAction(style: .normal, title: "Poor") { action, index in
+            print("Poor button tapped")
         }
-        more.backgroundColor = .lightGray
+        poor.backgroundColor = .red
         
-        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
-            print("favorite button tapped")
+        let neutral = UITableViewRowAction(style: .normal, title: "Neutral") { action, index in
+            print("Neutral button tapped")
         }
-        favorite.backgroundColor = .orange
+        neutral.backgroundColor = .yellow
         
-        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
-            print("share button tapped")
+        let good = UITableViewRowAction(style: .normal, title: "Good") { action, index in
+            print("Good button tapped")
         }
-        share.backgroundColor = .blue
+        good.backgroundColor = .green
         
-        return [share, favorite, more]
+        return [poor, neutral, good]
     }
 
     // MARK: Navigation

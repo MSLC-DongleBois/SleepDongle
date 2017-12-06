@@ -299,9 +299,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-xT-sf3">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-xT-sf3">
                                 <rect key="frame" x="16" y="66" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Poor"/>
                                     <segment title="Neutral"/>
@@ -315,11 +314,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="V7p-wz-KEd" firstAttribute="trailing" secondItem="xsV-GJ-yh1" secondAttribute="trailingMargin" id="5W0-3c-0qk"/>
+                            <constraint firstItem="hdd-xT-sf3" firstAttribute="top" secondItem="mYu-LV-v0O" secondAttribute="bottom" constant="8" symbolic="YES" id="FbJ-hn-5Q9"/>
                             <constraint firstItem="V7p-wz-KEd" firstAttribute="leading" secondItem="xsV-GJ-yh1" secondAttribute="leadingMargin" id="Hro-6N-fiW"/>
                             <constraint firstItem="V7p-wz-KEd" firstAttribute="leading" secondItem="mYu-LV-v0O" secondAttribute="leading" id="J07-CF-EzP"/>
                             <constraint firstItem="mYu-LV-v0O" firstAttribute="top" secondItem="V7p-wz-KEd" secondAttribute="bottom" constant="8" symbolic="YES" id="MXd-WY-e4u"/>
                             <constraint firstItem="V7p-wz-KEd" firstAttribute="trailing" secondItem="mYu-LV-v0O" secondAttribute="trailing" id="R1M-DW-biA"/>
                             <constraint firstItem="V7p-wz-KEd" firstAttribute="top" secondItem="3cI-zp-vUf" secondAttribute="bottom" constant="8" symbolic="YES" id="c8P-nZ-sP7"/>
+                            <constraint firstItem="hdd-xT-sf3" firstAttribute="leading" secondItem="mYu-LV-v0O" secondAttribute="leading" id="jkX-Pi-p9C"/>
+                            <constraint firstItem="hdd-xT-sf3" firstAttribute="trailing" secondItem="mYu-LV-v0O" secondAttribute="trailing" id="pmA-PS-kED"/>
                         </constraints>
                     </view>
                     <connections>

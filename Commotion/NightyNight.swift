@@ -41,7 +41,7 @@ class NightyNight : NSObject, NSCoding
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        <#code#>
+        self.init()
     }
     
     // raw data values

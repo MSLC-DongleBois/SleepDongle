@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 class NightyNight : NSObject, NSCoding
 {
@@ -22,6 +23,7 @@ class NightyNight : NSObject, NSCoding
         static let lightSleepPercentage = "lightSleepPercentage"
         static let awakePercentage = "awakePercentage"
     }
+    
     func encode(with aCoder: NSCoder) {
         aCoder.encode(eventStart, forKey: PropertyKey.eventStart)
         aCoder.encode(eventEnd, forKey: PropertyKey.eventEnd)
@@ -34,7 +36,11 @@ class NightyNight : NSObject, NSCoding
         aCoder.encode(awakePercentage, forKey: PropertyKey.awakePercentage)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    override init() {
+        super.init()
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
         <#code#>
     }
     

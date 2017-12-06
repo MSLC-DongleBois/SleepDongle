@@ -12,7 +12,7 @@ class HistoryTableViewController: UITableViewController {
     
     //MARK: Properties
     
-    var cellData = [(NSInteger, String)]()
+    var cellData = [NightyNight]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +47,9 @@ class HistoryTableViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let singleCellData = cellData[indexPath.row]
         
-        cell.scoreLabel.text = String(singleCellData.0)
-        cell.dateLabel.text = singleCellData.1
-
         // Configure the cell...
+        cell.scoreLabel.text = String(singleCellData.sleepScore)
+        cell.dateLabel.text = convertDateToString(date: singleCellData.eventStart)
 
         return cell
     }
@@ -93,16 +92,19 @@ class HistoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let poor = UITableViewRowAction(style: .normal, title: "Poor") { action, index in
             print("Poor button tapped")
+            self.cellData[index.row].userClassification = 0 // 0: "Poor"
         }
         poor.backgroundColor = .red
         
         let neutral = UITableViewRowAction(style: .normal, title: "Neutral") { action, index in
             print("Neutral button tapped")
+            self.cellData[index.row].userClassification = 1 // 1: "Neutral"
         }
         neutral.backgroundColor = .yellow
         
         let good = UITableViewRowAction(style: .normal, title: "Good") { action, index in
             print("Good button tapped")
+            self.cellData[index.row].userClassification = 2 // 2: "Good"
         }
         good.backgroundColor = .green
         
@@ -136,7 +138,20 @@ class HistoryTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleMeals() {
-        cellData += [(69, "Wednesday, Oct 31st"),(100, "Friday, Dec 13th"),(33, "Sunday, Jul 2nd")]
+        var temp: NightyNight = NightyNight(start: Date(), score: 100, classification: 1)
+        cellData.append(temp)
+        temp = NightyNight(start: Date(), score: 69)
+        cellData.append(temp)
+        temp = NightyNight(start: Date(), score: 33)
+        cellData.append(temp)
+        
+    }
+    
+    func convertDateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE, MMM dd") // set template after setting locale
+        return dateFormatter.string(from: date) // Monday, Dec 31
     }
 
 }

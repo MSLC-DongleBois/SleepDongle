@@ -46,7 +46,7 @@ class NightyNight : NSObject, NSCoding
         self.init()
     }
     
-    init(start: Date, score: Int, classification: Int?) {
+    init(start: Date, score: Int, classification: Int? = nil) {
         super.init()
         eventStart = start
         sleepScore = score

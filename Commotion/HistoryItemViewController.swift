@@ -12,11 +12,12 @@ class HistoryItemViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var userClassificationSegmentedControl: UISegmentedControl!
     /*
      This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
      or constructed as part of adding a new meal.
      */
-    var cellData: (NSInteger, String)?
+    var cellData: NightyNight?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +25,17 @@ class HistoryItemViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // Set up views if editing an existing Meal.
-//        if let cellData = nightyNight {
         if let cellData = cellData {
-//            scoreLabel.text = nightyNight.sleepScore
-//            dateLabel.text = convertDateToString(nightyNight.startDate)
-            scoreLabel.text = String(cellData.0)
-            dateLabel.text = cellData.1
+            scoreLabel.text = String(cellData.sleepScore)
+            dateLabel.text = convertDateToString(date: cellData.eventStart)
+            userClassificationSegmentedControl.selectedSegmentIndex = cellData.userClassification!
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func userClassificationValueChanged(_ sender: UISegmentedControl) {
+        cellData?.userClassification = sender.selectedSegmentIndex
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -52,8 +49,8 @@ class HistoryItemViewController: UIViewController {
     func convertDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US")
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMM dd") // set template after setting locale
-        return dateFormatter.string(from: date) // Dec 31
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMM dd, YYYY") // set template after setting locale
+        return dateFormatter.string(from: date) // December 31, 2017
     }
 
 }

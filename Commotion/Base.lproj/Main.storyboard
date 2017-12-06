@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -299,6 +299,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-xT-sf3">
+                                <rect key="frame" x="16" y="66" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Poor"/>
+                                    <segment title="Neutral"/>
+                                    <segment title="Good"/>
+                                </segments>
+                                <connections>
+                                    <action selector="userClassificationValueChanged:" destination="9nx-lV-xVp" eventType="valueChanged" id="Bav-6O-oPB"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -313,6 +325,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="mYu-LV-v0O" id="ag1-mu-jff"/>
                         <outlet property="scoreLabel" destination="V7p-wz-KEd" id="XmF-KH-5yS"/>
+                        <outlet property="userClassificationSegmentedControl" destination="hdd-xT-sf3" id="qBs-D6-GjQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWZ-t1-Kw0" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -56,5 +56,6 @@ class NightyNight : NSObject, NSCoding
     var deepSleepPercentage: Double!
     var lightSleepPercentage: Double!
     var awakePercentage: Double!
+    var userClassification: String?
     
 }

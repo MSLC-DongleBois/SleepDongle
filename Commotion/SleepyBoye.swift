@@ -34,7 +34,12 @@ class SleepyBoye: NSObject {
         self.deepSleep = 0
         self.lightSleep = 0
         self.awake = 0
+        self.deepSleepPercentage = 0.0
+        self.lightSleepPercentage = 0.0
+        self.awakePercentage = 0.0
+        self.sleepScore = 0
         analyzeEvents()
+        scoring()
     }
     
     // categorical sleep analysis
@@ -50,6 +55,10 @@ class SleepyBoye: NSObject {
                 awake = awake + 1
             }
         }
+    }
+    
+    func scoring() {
+        
     }
     
     // return values

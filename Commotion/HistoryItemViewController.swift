@@ -28,7 +28,11 @@ class HistoryItemViewController: UIViewController {
         if let cellData = cellData {
             scoreLabel.text = String(cellData.sleepScore)
             dateLabel.text = convertDateToString(date: cellData.eventStart)
-            userClassificationSegmentedControl.selectedSegmentIndex = cellData.userClassification!
+            if let userClassification = cellData.userClassification {
+                userClassificationSegmentedControl.selectedSegmentIndex = userClassification
+            } else {
+                userClassificationSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
+            }
         }
     }
 

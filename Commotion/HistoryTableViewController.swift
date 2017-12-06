@@ -90,25 +90,25 @@ class HistoryTableViewController: UITableViewController {
     */
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
-        let poor = UITableViewRowAction(style: .normal, title: "Poor") { action, index in
-            print("Poor button tapped")
-            self.cellData[index.row].userClassification = 0 // 0: "Poor"
-        }
-        poor.backgroundColor = .red
-        
-        let neutral = UITableViewRowAction(style: .normal, title: "Neutral") { action, index in
-            print("Neutral button tapped")
-            self.cellData[index.row].userClassification = 1 // 1: "Neutral"
-        }
-        neutral.backgroundColor = .yellow
-        
         let good = UITableViewRowAction(style: .normal, title: "Good") { action, index in
             print("Good button tapped")
             self.cellData[index.row].userClassification = 2 // 2: "Good"
         }
         good.backgroundColor = .green
         
-        return [poor, neutral, good]
+        let neutral = UITableViewRowAction(style: .normal, title: "Neutral") { action, index in
+            print("Neutral button tapped")
+            self.cellData[index.row].userClassification = 1 // 1: "Neutral"
+        }
+        neutral.backgroundColor = .orange
+        
+        let poor = UITableViewRowAction(style: .normal, title: "Poor") { action, index in
+            print("Poor button tapped")
+            self.cellData[index.row].userClassification = 0 // 0: "Poor"
+        }
+        poor.backgroundColor = .red
+        
+        return [good, neutral, poor]
     }
 
     // MARK: Navigation

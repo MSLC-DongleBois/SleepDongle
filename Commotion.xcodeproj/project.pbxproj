@@ -21,10 +21,11 @@
 		DC309300EC9395B1C614F50B /* Pods_Commotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7959272720AE2D66BC688D8C /* Pods_Commotion.framework */; };
 		FB1417A31FD7099B00B41E39 /* CoreMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */; };
 		FB1417A51FD709A500B41E39 /* AustinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */; };
+		FB1417A71FD71B1200B41E39 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417A61FD71B1200B41E39 /* HistoryTableViewCell.swift */; };
+		FB1417A91FD722D200B41E39 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417A81FD722D200B41E39 /* HistoryTableViewController.swift */; };
 		FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */; };
 		FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A51FD5EE040019A7D1 /* ViewController.swift */; };
 		FBF205A81FD5F3380019A7D1 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */; };
-		FBF205AA1FD5F3FD0019A7D1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */; };
 		FBF205AC1FD5F4CB0019A7D1 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */; };
 		FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */; };
 		FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */; };
@@ -71,10 +72,11 @@
 		E041550C4E1E55F90CBFD7BE /* Pods-Commotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Commotion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Commotion/Pods-Commotion.release.xcconfig"; sourceTree = "<group>"; };
 		FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreMotionManager.swift; sourceTree = "<group>"; };
 		FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AustinStoryboard.storyboard; sourceTree = "<group>"; };
+		FB1417A61FD71B1200B41E39 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		FB1417A81FD722D200B41E39 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FBF205A51FD5EE040019A7D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
-		FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemViewController.swift; sourceTree = "<group>"; };
 		FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -163,11 +165,12 @@
 				FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */,
 				FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */,
 				FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */,
-				FBF205A91FD5F3FD0019A7D1 /* HistoryViewController.swift */,
 				FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */,
 				FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */,
 				FBF205AF1FD6FA220019A7D1 /* PageViewController.swift */,
 				FBF205B11FD7003D0019A7D1 /* PageContentViewController.swift */,
+				FB1417A61FD71B1200B41E39 /* HistoryTableViewCell.swift */,
+				FB1417A81FD722D200B41E39 /* HistoryTableViewController.swift */,
 				68E0C7EF1FD71A28006398F2 /* SleepyBoye.swift */,
 			);
 			path = Commotion;
@@ -387,6 +390,7 @@
 				02619F3B1FD716D100C884C3 /* DoctorPhill.swift in Sources */,
 				FBF205AC1FD5F4CB0019A7D1 /* AlarmViewController.swift in Sources */,
 				FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */,
+				FB1417A71FD71B1200B41E39 /* HistoryTableViewCell.swift in Sources */,
 				FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */,
 				FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */,
 				68E0C7F01FD71A28006398F2 /* SleepyBoye.swift in Sources */,
@@ -397,8 +401,8 @@
 				FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */,
 				FBF205A81FD5F3380019A7D1 /* TrackingViewController.swift in Sources */,
 				B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */,
-				FBF205AA1FD5F3FD0019A7D1 /* HistoryViewController.swift in Sources */,
 				B62ED3A31D7F299D00B503DF /* AppDelegate.swift in Sources */,
+				FB1417A91FD722D200B41E39 /* HistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

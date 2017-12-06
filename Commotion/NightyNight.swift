@@ -46,11 +46,11 @@ class NightyNight : NSObject, NSCoding
         self.init()
     }
     
-    init(Start: Date, Score: Int, Classification: Int) {
+    init(start: Date, score: Int, classification: Int?) {
         super.init()
-        eventStart = Start
-        sleepScore = Score
-        userClassification = Classification
+        eventStart = start
+        sleepScore = score
+        userClassification = classification
     }
     
     

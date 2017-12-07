@@ -1,9 +1,9 @@
 //
 //  HomeViewController.swift
-//  Commotion
+//  SleepDongle
 //
-//  Created by Kellen Schmidt on 12/4/17.
-//  Copyright © 2017 Eric Larson. All rights reserved.
+//  Created by Kellen Schmidt on 11/21/17.
+//  Copyright © 2017 Kellen Schmidt. All rights reserved.
 //
 
 import UIKit

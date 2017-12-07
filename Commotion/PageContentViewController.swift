@@ -11,7 +11,6 @@ import UIKit
 class PageContentViewController: UIViewController {
 
     @IBOutlet weak var testLabel: UILabel!
-    
     var pageIndex: Int = 0
     var strTitle: String!
     
@@ -21,12 +20,6 @@ class PageContentViewController: UIViewController {
         // Do any additional setup after loading the view.
         testLabel.text = strTitle
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +16,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-xo-lxR">
+                    <rect key="frame" x="108.5" y="8" width="60" height="503"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="agh-xY-fr3"/>
                     </constraints>
@@ -25,6 +28,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="102" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oG8-fN-dTv">
+                    <rect key="frame" x="213.5" y="8" width="60" height="503"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="IHb-RB-7FG"/>
                     </constraints>
@@ -36,6 +40,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hU4-5l-OzB">
+                    <rect key="frame" x="168.5" y="237" width="45" height="45"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="e6j-Ma-WLw"/>
                         <constraint firstAttribute="height" constant="45" id="gzP-2N-JKw"/>
@@ -45,6 +50,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0b2-hJ-RMR" customClass="EZYGradientView" customModule="DPTimePicker" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="382" height="237"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="angleº">
                             <real key="value" value="0.0"/>
@@ -68,6 +74,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPK-5u-y9M" userLabel="TopLine">
+                    <rect key="frame" x="71" y="236" width="240" height="1"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="2bK-yt-KeN"/>
@@ -75,6 +82,7 @@
                     </constraints>
                 </view>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfv-lv-00X" customClass="EZYGradientView" customModule="DPTimePicker" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="282" width="382" height="243"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="angleº">
                             <real key="value" value="180"/>
@@ -98,10 +106,11 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kf-mS-Ryj">
+                    <rect key="frame" x="10" y="449" width="60" height="60"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="51t-jb-YSR"/>
-                        <constraint firstAttribute="height" constant="50" id="sRi-Vp-mNr"/>
+                        <constraint firstAttribute="width" constant="60" id="51t-jb-YSR"/>
+                        <constraint firstAttribute="height" constant="60" id="sRi-Vp-mNr"/>
                     </constraints>
                     <state key="normal">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -111,10 +120,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80x-AD-bXx">
+                    <rect key="frame" x="312" y="449" width="60" height="60"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="Nga-44-IKN"/>
-                        <constraint firstAttribute="height" constant="50" id="mmg-X9-ae8"/>
+                        <constraint firstAttribute="width" constant="60" id="Nga-44-IKN"/>
+                        <constraint firstAttribute="height" constant="60" id="mmg-X9-ae8"/>
                     </constraints>
                     <state key="normal">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -124,6 +134,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R52-Po-jpj" userLabel="BottomLine">
+                    <rect key="frame" x="71" y="282" width="240" height="1"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="M7J-aq-qm1"/>

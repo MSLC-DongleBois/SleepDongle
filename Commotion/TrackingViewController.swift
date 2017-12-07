@@ -12,11 +12,19 @@ class TrackingViewController: UIViewController {
     
     let currentBrightness = UIScreen.main.brightness
 
+    var drPhill = DoctorPhill()
+    let cmManager = CoreMotionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         UIApplication.shared.isIdleTimerDisabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(deviceChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         self.view.backgroundColor = UIColor.clear
+      
+        drPhill.createNight(start: Date(), alarm: Date())
+        cmManager.startReceivingAccelUpdates(interval: 0.1, completion:drPhill.HandleMotion)
+        print("Started motion tracking")
     }
     
     @objc func deviceChange() {
@@ -47,4 +55,5 @@ class TrackingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }

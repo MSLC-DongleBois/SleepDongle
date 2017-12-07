@@ -58,7 +58,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return pageContentViewController
     }
     
-
     /*
     // MARK: - Navigation
 

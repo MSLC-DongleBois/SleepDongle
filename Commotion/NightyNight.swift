@@ -12,7 +12,11 @@ import os.log
 class NightyNight : NSObject, NSCoding
 {
     
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("Nights")
+    
     struct PropertyKey {
+        static let id = "id"
         static let eventStart = "eventStart"
         static let eventEnd = "eventEnd"
         static let alarmTime = "alarmTime"
@@ -26,6 +30,7 @@ class NightyNight : NSObject, NSCoding
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: PropertyKey.id)
         aCoder.encode(eventStart, forKey: PropertyKey.eventStart)
         aCoder.encode(eventEnd, forKey: PropertyKey.eventEnd)
         aCoder.encode(alarmTime, forKey: PropertyKey.alarmTime)
@@ -43,7 +48,26 @@ class NightyNight : NSObject, NSCoding
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        self.init()
+        
+        guard let id = aDecoder.decodeObject(forKey: PropertyKey.id) as? String
+            else
+        {
+            os_log("Unable to decode the name for a Night object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        let eventStart = aDecoder.decodeObject(forKey: PropertyKey.eventStart)
+        let eventEnd = aDecoder.decodeObject(forKey: PropertyKey.eventEnd)
+        let alarmTime = aDecoder.decodeObject(forKey: PropertyKey.alarmTime)
+        let motionEvents = aDecoder.decodeObject(forKey: PropertyKey.motionEvents)
+        let lengthOfSleep = aDecoder.decodeObject(forKey: PropertyKey.lengthOfSleep)
+        let sleepScore = aDecoder.decodeObject(forKey: PropertyKey.sleepScore)
+        let deepSleepPercentage = aDecoder.decodeObject(forKey: PropertyKey.deepSleepPercentage)
+        let lightSleepPercentage = aDecoder.decodeObject(forKey: PropertyKey.lightSleepPercentage)
+        let awakePercentage = aDecoder.decodeObject(forKey: PropertyKey.awakePercentage)
+        let userClassification = aDecoder.decodeObject(forKey: PropertyKey.userClassification) as? Int
+        
+        self.init(start: eventStart as! Date, end: eventEnd as! Date, alarm: alarmTime as! Date, events: motionEvents as! [Int], length: lengthOfSleep as! DateInterval, score: sleepScore as! Int, deepPer: deepSleepPercentage as! Double, lightPer: lightSleepPercentage as! Double, awakePer: awakePercentage as! Double, classification: userClassification)
+            
     }
     
     init(start: Date, score: Int, classification: Int? = nil) {
@@ -52,10 +76,24 @@ class NightyNight : NSObject, NSCoding
         sleepScore = score
         userClassification = classification
     }
+    init(start: Date, end: Date, alarm: Date, events: [Int], length: DateInterval, score: Int, deepPer: Double, lightPer: Double, awakePer: Double, classification: Int? = nil) {
+        super.init()
+        eventStart = start
+        eventEnd = end
+        alarmTime = alarm
+        motionEvents = events
+        lengthOfSleep = length
+        sleepScore = score
+        deepSleepPercentage = deepPer
+        lightSleepPercentage = lightPer
+        awakePercentage = awakePer
+        userClassification = classification
+    }
     
     
     
     // raw data values
+    var id = String()
     var eventStart = Date()
     var eventEnd = Date()
     var alarmTime = Date()

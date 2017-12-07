@@ -62,8 +62,13 @@ class SleepyBoye: NSObject {
     }
     
     // return values
-    func getSleep() -> (deepSleep: Int, lightSleep: Int, awake: Int, start: Date, end: Date) {
+    func getSleep() -> (deepSleep: Int, lightSleep: Int, awake: Int, start: Date, end: Date)
+    {
         return (self.deepSleep, self.lightSleep, self.awake, self.startDate, self.endDate)
     }
+    
+    
+    
+
     
 }

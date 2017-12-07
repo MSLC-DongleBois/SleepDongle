@@ -10,10 +10,15 @@ import UIKit
 
 class TrackingViewController: UIViewController {
 
+    var drPhill = DoctorPhill()
+    let cmManager = CoreMotionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        drPhill.createNight(start: Date(), alarm: Date())
+        cmManager.startReceivingAccelUpdates(interval: 0.1, completion:drPhill.HandleMotion)
+        print("Started motion tracking")
     }
 
     /*

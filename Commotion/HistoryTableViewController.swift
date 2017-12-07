@@ -17,7 +17,7 @@ class HistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        saveSampleNights()
+        saveSampleNights()
         // Load the sample data.
         loadNights()
         

@@ -9,17 +9,24 @@
 import Foundation
 import os.log
 
-var nights = [NightyNight]()
 
-func saveNights() {
-    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(nights, toFile: NightyNight.ArchiveURL.path)
-    if isSuccessfulSave {
-        os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
-    } else {
-        os_log("Failed to save meals...", log: OSLog.default, type: .error)
+class NightWatchman
+{
+    var nights = [NightyNight]()
+
+    func saveNights() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(nights, toFile: NightyNight.ArchiveURL.path)
+        if isSuccessfulSave
+        {
+            os_log("Nights successfully saved.", log: OSLog.default, type: .debug)
+        }
+        else
+        {
+            os_log("Failed to save nights...", log: OSLog.default, type: .error)
+        }
     }
-}
 
-func loadNights() -> [NightyNight]? {
-    return NSKeyedUnarchiver.unarchiveObject(withFile: NightyNight.ArchiveURL.path) as? [NightyNight]
+    func loadNights() -> [NightyNight]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: NightyNight.ArchiveURL.path) as? [NightyNight]
+    }
 }

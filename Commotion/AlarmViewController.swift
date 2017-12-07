@@ -10,9 +10,16 @@ import UIKit
 
 class AlarmViewController: UIViewController {
 
+    var drPhill = DoctorPhill()
+    let cmManager = CoreMotionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        drPhill.createNight(start: Date(), alarm: Date())
+        cmManager.startReceivingAccelUpdates(interval: 0.1, completion:drPhill.HandleMotion)
+        print("Started motion tracking")
         // Do any additional setup after loading the view.
     }
 

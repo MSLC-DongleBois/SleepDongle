@@ -66,4 +66,8 @@ class SleepyBoye: NSObject {
         return (self.deepSleep, self.lightSleep, self.awake, self.startDate, self.endDate)
     }
     
+    
+    
+
+    
 }

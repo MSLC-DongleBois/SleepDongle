@@ -16,7 +16,7 @@ class DoctorPhill : NSObject
     var accelX = 0.0
     var accelY = 0.0
     var accelZ = 0.0
-    let motionThreshold = 0.2
+    let motionThreshold = 0.015
     var itterCount = 0
     let itterThreshold = 300
     var cooldown = 0;
@@ -30,7 +30,7 @@ class DoctorPhill : NSObject
         
     }
     
-    func HandleMotion(data: CMAccelerometerData?, error: NSError?)
+    func HandleMotion(data: CMDeviceMotion?, error: NSError?)
     {
         if (cooldown > 0)
         {
@@ -43,18 +43,20 @@ class DoctorPhill : NSObject
             // same value as interval
             let dt = 0.1
             let alpha = dt / (RC + dt)
-            let rawX = data?.acceleration.x
-            let rawY = data?.acceleration.y
-            let rawZ = data?.acceleration.z
+            let rawX = data?.userAcceleration.x
+            let rawY = data?.userAcceleration.y
+            let rawZ = data?.userAcceleration.z
             self.accelX = rawX! * alpha + (1.0 - alpha) * self.accelX
             self.accelY = rawY! * alpha + (1.0 - alpha) * self.accelY
             self.accelZ = rawZ! * alpha + (1.0 - alpha) * self.accelZ
         }
         let combinedMotion = self.accelX + self.accelY + self.accelZ
-        if (combinedMotion > motionThreshold && cooldown == 0)
+        print(combinedMotion)
+        if ((combinedMotion > motionThreshold || combinedMotion * -1 > motionThreshold) && cooldown == 0)
         {
-            cooldown = 5
+            cooldown = 50
             motionCount = motionCount + 1
+            print("Motion Detected")
         }
         if (itterCount >= itterThreshold)
         {

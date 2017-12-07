@@ -23,11 +23,13 @@ class CoreMotionManager: NSObject {
         return instance!
     }
     
-    func startReceivingAccelUpdates(interval: TimeInterval, completion: ((CMAccelerometerData?, NSError?) -> Void)!) {
-        if (manager.isAccelerometerAvailable) {
-            manager.stopAccelerometerUpdates()
-            manager.accelerometerUpdateInterval = interval
-            manager.startAccelerometerUpdates(to: OperationQueue.main, withHandler: {
+    func startReceivingAccelUpdates(interval: TimeInterval, completion: ((CMDeviceMotion?, NSError?) -> Void)!) {
+        
+        
+        if (manager.isDeviceMotionAvailable) {
+            manager.stopDeviceMotionUpdates()
+            manager.deviceMotionUpdateInterval = interval
+            manager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: {
                 data, error in
                 if let callback = completion { callback(data, error as NSError?) }
             })
@@ -35,8 +37,8 @@ class CoreMotionManager: NSObject {
     }
     
     func stopReceivingAccelUpdates(completion: (() -> Void)!) {
-        if (manager.isAccelerometerAvailable) {
-            manager.stopAccelerometerUpdates()
+        if (manager.isDeviceMotionAvailable) {
+            manager.stopDeviceMotionUpdates()
             if let callback = completion { callback() }
         }
     }

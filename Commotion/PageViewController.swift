@@ -11,12 +11,19 @@ import UIKit
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     var arrPageTitle: NSArray = NSArray()
+    var xValues: [String] = [String]()
+    var yValues: [Double] = [Double]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        arrPageTitle = ["This is The SleepyBoi", "This is Brutal Tennis 3D", "This is SPARTA"];
+        
+        // Load data
+        arrPageTitle = ["This week", "Last week", "2 weeks ago"];
+        xValues = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        yValues = [7.0, 7.2, 6.0, 5.1, 7.2, 9.5, 8.2, 5.1, 7.2, 9.5, 8.2, 7.2, 6.0, 5.1, 8.2, 5.1, 7.2, 7.2, 9.5, 8.2, 5.1]
+        
         self.dataSource = self
         self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     }
@@ -54,6 +61,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         // Create a new view controller and pass suitable data.
         let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! PageContentViewController
         pageContentViewController.strTitle = "\(arrPageTitle[index])"
+        pageContentViewController.daysOfWeek = xValues
+        pageContentViewController.rawData = Array(yValues[index*xValues.count ..< (index+1)*xValues.count])
         pageContentViewController.pageIndex = index
         return pageContentViewController
     }

@@ -9,30 +9,38 @@
 import UIKit
 
 class TrackingViewController: UIViewController {
+    
+    let currentBrightness = UIScreen.main.brightness
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.isIdleTimerDisabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(deviceChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        self.view.backgroundColor = UIColor.clear
     }
     
     @objc func deviceChange() {
-        print("WE GOT HERE TIM COOK FUCKING ASSHOLE")
         switch UIDevice.current.orientation {
         case .faceDown:
-            print("DOWN YOU PIECE OF SHIT FUCK YOU SWIFT 4")
+            UIScreen.main.brightness = CGFloat(0.0)
         case .faceUp:
-            print("UPPPPPPPP!")
+            UIScreen.main.brightness = currentBrightness
         case .unknown:
-            print("unknown")
+            UIScreen.main.brightness = CGFloat(0.0)
         case .landscapeLeft:
-            print()
+            UIScreen.main.brightness = currentBrightness
         case .landscapeRight:
-            print()
+            UIScreen.main.brightness = currentBrightness
         case .portrait:
-            print()
+            UIScreen.main.brightness = currentBrightness
         case .portraitUpsideDown:
-            print()
+            UIScreen.main.brightness = currentBrightness
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UIApplication.shared.isIdleTimerDisabled = false
     }
 
     override func didReceiveMemoryWarning() {

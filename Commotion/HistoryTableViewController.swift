@@ -141,11 +141,18 @@ class HistoryTableViewController: UITableViewController {
         night.nights.append(temp)
         temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 1, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 2)
         night.nights.append(temp)
-        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 2, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
-
+        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 33, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
         night.nights.append(temp)
+        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 55, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
+        night.nights.append(temp)
+        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 18, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
+        night.nights.append(temp)
+        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 97, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
+        night.nights.append(temp)
+        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 81, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
+        night.nights.append(temp)
+        
         night.saveNights()
-
     }
     
     private func loadNights() {

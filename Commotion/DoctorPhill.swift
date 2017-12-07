@@ -51,7 +51,7 @@ class DoctorPhill : NSObject
             self.accelZ = rawZ! * alpha + (1.0 - alpha) * self.accelZ
         }
         let combinedMotion = self.accelX + self.accelY + self.accelZ
-        print(combinedMotion)
+        // print(combinedMotion)
         if ((combinedMotion > motionThreshold || combinedMotion * -1 > motionThreshold) && cooldown == 0)
         {
             cooldown = 50

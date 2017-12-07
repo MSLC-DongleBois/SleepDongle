@@ -268,7 +268,7 @@
 				TargetAttributes = {
 					B62ED39E1D7F299D00B503DF = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6FLLWS37PJ;
+						DevelopmentTeam = L7TFX9P5M2;
 						LastSwiftMigration = 0900;
 					};
 					B62ED3B21D7F299D00B503DF = {
@@ -566,11 +566,11 @@
 			baseConfigurationReference = 19CC39CD490DEB0159FBE2FF /* Pods-Commotion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6FLLWS37PJ;
+				DEVELOPMENT_TEAM = L7TFX9P5M2;
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SMU.Commotion;
+				PRODUCT_BUNDLE_IDENTIFIER = KQ.Commotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -582,11 +582,11 @@
 			baseConfigurationReference = E041550C4E1E55F90CBFD7BE /* Pods-Commotion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6FLLWS37PJ;
+				DEVELOPMENT_TEAM = L7TFX9P5M2;
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SMU.Commotion;
+				PRODUCT_BUNDLE_IDENTIFIER = KQ.Commotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

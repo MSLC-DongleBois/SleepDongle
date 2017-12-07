@@ -12,24 +12,31 @@ class TrackingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    @objc func deviceChange() {
+        print("WE GOT HERE TIM COOK FUCKING ASSHOLE")
+        switch UIDevice.current.orientation {
+        case .faceDown:
+            print("DOWN YOU PIECE OF SHIT FUCK YOU SWIFT 4")
+        case .faceUp:
+            print("UPPPPPPPP!")
+        case .unknown:
+            print("unknown")
+        case .landscapeLeft:
+            print()
+        case .landscapeRight:
+            print()
+        case .portrait:
+            print()
+        case .portraitUpsideDown:
+            print()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

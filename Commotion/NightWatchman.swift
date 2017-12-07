@@ -30,7 +30,7 @@ class NightWatchman
 
     func loadNights() -> [NightyNight]? {
         let x = NSKeyedUnarchiver.unarchiveObject(withFile: NightyNight.ArchiveURL.path) as? [NightyNight]
-        nights = x!
+        nights = x! //fatal error found nil unwrapping Optional
         return x
     }
 }

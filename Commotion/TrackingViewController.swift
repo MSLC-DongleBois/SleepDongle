@@ -16,26 +16,44 @@ class TrackingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
-    
-        let gradientColors = [UIColor.blue.cgColor, UIColor.cyan.cgColor] as CFArray // Colors of the gradient
+        // Set background color of view
+        self.view.backgroundColor = UIColor.brown
+        
+        // Set color gradient values
+        let topGradient = UIColor.init(red: 66/255, green: 244/255, blue: 78/255, alpha: 1).cgColor
+        let bottomGradient = UIColor.init(red: 107/255, green: 255/255, blue: 116/255, alpha: 0.7).cgColor
+        let gradientColors = [topGradient, bottomGradient] as CFArray // Colors of the gradient
         let colorLocations:[CGFloat] = [1.0, 0.0] // Positioning of the gradient
         let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) // Gradient Object
         
+        // Set graph's line color value
+        let lineColor = UIColor.init(red: 0/255, green: 244/255, blue: 17/255, alpha: 1)
         
         
-        // Do any additional setup after loading the view.
-        let dollars1 = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
+        // Set dummy data
+        let dollars1 = [20.0, 15.0, 10.0, 10.0, 9.0, 11.0, 7.0, 9.0, 14.0, 11.0, 6.0, 3.0,
+                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
+                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
+                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
+                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
+                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
+                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
+                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        // 1 - creating an array of data entries
+        
+        
+        // Creating an array of data entries
         var yValues : [ChartDataEntry] = [ChartDataEntry]()
         
-        for i in 0 ..< months.count {
+        for i in 0 ..< dollars1.count {
             yValues.append(ChartDataEntry(x: Double(i + 1), y: dollars1[i]))
         }
         
         let data = LineChartData()
+        
         let ds = LineChartDataSet(values: yValues, label: "Months")
+        
+        ds.setColor(lineColor)
         
         ds.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0) // Set the Gradient
         
@@ -51,6 +69,7 @@ class TrackingViewController: UIViewController {
         chartyBoi.rightAxis.drawGridLinesEnabled = false
         chartyBoi.rightAxis.drawAxisLineEnabled = false
         chartyBoi.rightAxis.drawLabelsEnabled = false
+        chartyBoi.leftAxis.drawLabelsEnabled = true
         
         // Get rid of legend and description
         chartyBoi.chartDescription?.text = ""
@@ -60,18 +79,29 @@ class TrackingViewController: UIViewController {
         chartyBoi.xAxis.drawGridLinesEnabled = false
         chartyBoi.xAxis.drawAxisLineEnabled = true
         chartyBoi.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        chartyBoi.xAxis.drawLabelsEnabled = false
+        chartyBoi.xAxis.drawLabelsEnabled = true
+        chartyBoi.xAxis.labelTextColor = UIColor.white
         
         
+//        let quality = ["Awake", "Asleep", "Deep Sleep"]
+        let hours = ["12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am"]
+        //self.chartyBoi.xAxis.valueFormatter = IndexAxisValueFormatter(values: hours)
+        
+//
+//        chartyBoi.xAxis.valueFormatter = IndexAxisValueFormatter(values: hours)
+//        chartyBoi.leftAxis.valueFormatter = IndexAxisValueFormatter(values: quality)
+//        chartyBoi.xAxis.granularity = 1
+//        chartyBoi.leftAxis.granularity = 1
+        
+        
+        chartyBoi.animate(yAxisDuration: 0.5, easingOption: .easeInCubic)
         data.addDataSet(ds)
         self.chartyBoi.data = data
-        
-        
-        
-        
-
+    
         // Do any additional setup after loading the view.
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

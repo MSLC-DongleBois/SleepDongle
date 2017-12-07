@@ -52,8 +52,8 @@ class AlarmViewController: UIViewController {
         timePicker.scrollAnimations = true
         timePicker.areLinesHidden = false
         timePicker.arePointsHidden = false
-        timePicker.initialHour = "15"
-        timePicker.initialMinute = "12"
+        timePicker.initialHour = "12"
+        timePicker.initialMinute = "30"
         
         timePicker.show(nil)
     }

@@ -36,13 +36,22 @@ class TrackingViewController: UIViewController {
         // Set graph's bar color value
         let barColor = [UIColor(red: 83/255, green: 200/255, blue: 240/255, alpha: 1)]
         
+        var averageVal: Double = 0
+        
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0 ..< xLabels.count {
             let dataEntry = BarChartDataEntry(x: Double(i), y: yValues[i])
             dataEntries.append(dataEntry)
+            averageVal += yValues[i]
         }
-        
+        averageVal = averageVal / Double(yValues.count)
+        averageVal = Double(round(averageVal * 100)/100)
+        let averageLabel = "Average: " + String(averageVal)
+        let averageLine = ChartLimitLine(limit: averageVal, label: averageLabel)
+        averageLine.lineColor = UIColor(red: 25/255, green: 91/255, blue: 218/255, alpha: 1)
+        averageLine.valueTextColor = UIColor.white
+        averageLine.labelPosition = .rightBottom
         
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
@@ -80,6 +89,8 @@ class TrackingViewController: UIViewController {
         barryBoi.xAxis.drawLabelsEnabled = true
         barryBoi.xAxis.labelFont = .boldSystemFont(ofSize: 13)
         
+        
+        self.barryBoi.rightAxis.addLimitLine(averageLine)
         self.barryBoi.animate(yAxisDuration: 0.5, easingOption: .easeInSine)
         
         self.barryBoi.data = chartData

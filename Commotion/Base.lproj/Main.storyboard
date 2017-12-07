@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ald-lO-JRk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ald-lO-JRk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracking page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGs-LI-oD2">
-                                <rect key="frame" x="138" y="124" width="109" height="21"/>
+                                <rect key="frame" x="138" y="28" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -250,7 +250,7 @@
                                 <rect key="frame" x="140" y="430" width="94" height="30"/>
                                 <state key="normal" title="Start tracking"/>
                                 <connections>
-                                    <segue destination="Pd6-qV-nZA" kind="show" id="H8b-nf-llH"/>
+                                    <segue destination="Pd6-qV-nZA" kind="presentation" modalTransitionStyle="flipHorizontal" id="H8b-nf-llH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -333,7 +333,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWu-TZ-bCX">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWu-TZ-bCX" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="0.0" width="343" height="198"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBt-s2-xJy">
@@ -351,7 +351,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KWu-TZ-bCX" firstAttribute="trailing" secondItem="ceV-Ol-pfa" secondAttribute="trailingMargin" id="F0l-Kf-fWq"/>
                             <constraint firstItem="AP0-sY-ET0" firstAttribute="top" secondItem="KWu-TZ-bCX" secondAttribute="bottom" constant="469" id="RfI-bz-HKN"/>
@@ -360,6 +360,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="barryBoi" destination="KWu-TZ-bCX" id="mtY-kX-7KG"/>
                         <outlet property="testLabel" destination="RBt-s2-xJy" id="w59-ca-D4b"/>
                     </connections>
                 </viewController>

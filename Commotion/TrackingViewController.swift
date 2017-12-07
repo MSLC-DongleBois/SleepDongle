@@ -19,6 +19,15 @@ class TrackingViewController: UIViewController {
         drPhill.createNight(start: Date(), alarm: Date())
         cmManager.startReceivingAccelUpdates(interval: 0.1, completion:drPhill.HandleMotion)
         print("Started motion tracking")
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.isStatusBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.isStatusBarHidden = false
     }
 
     /*
@@ -30,5 +39,9 @@ class TrackingViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+//
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
 
 }

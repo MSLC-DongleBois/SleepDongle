@@ -208,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracking page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGs-LI-oD2">
-                                <rect key="frame" x="138" y="124" width="109" height="21"/>
+                                <rect key="frame" x="138" y="28" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -250,7 +250,7 @@
                                 <rect key="frame" x="140" y="430" width="94" height="30"/>
                                 <state key="normal" title="Start tracking"/>
                                 <connections>
-                                    <segue destination="Pd6-qV-nZA" kind="show" id="H8b-nf-llH"/>
+                                    <segue destination="Pd6-qV-nZA" kind="presentation" modalTransitionStyle="flipHorizontal" id="H8b-nf-llH"/>
                                 </connections>
                             </button>
                         </subviews>

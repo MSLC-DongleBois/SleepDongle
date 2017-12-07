@@ -18,7 +18,8 @@ class HistoryTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Load the sample data.
-        loadSampleMeals()
+        loadNights()
+        //saveSampleNights()
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,13 +138,27 @@ class HistoryTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-    private func loadSampleMeals() {
-        var temp: NightyNight = NightyNight(start: Date(), score: 100, classification: 1)
-        cellData.append(temp)
-        temp = NightyNight(start: Date(), score: 69)
-        cellData.append(temp)
-        temp = NightyNight(start: Date(), score: 33)
-        cellData.append(temp)
+    private func saveSampleNights()
+    {
+        let night = NightWatchman()
+        var temp: NightyNight = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 69, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 1)
+        night.nights.append(temp)
+        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 1, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 2)
+        night.nights.append(temp)
+        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 2, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
+
+        night.nights.append(temp)
+        night.saveNights()
+
+    }
+    
+    private func loadNights() {
+        let night = NightWatchman()
+        night.loadNights()
+        for x in night.nights
+        {
+            cellData.append(x)
+        }
         
     }
     

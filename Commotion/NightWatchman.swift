@@ -19,14 +19,18 @@ class NightWatchman
         if isSuccessfulSave
         {
             os_log("Nights successfully saved.", log: OSLog.default, type: .debug)
+            print("Good shit")
         }
         else
         {
             os_log("Failed to save nights...", log: OSLog.default, type: .error)
+            print("FECK")
         }
     }
 
     func loadNights() -> [NightyNight]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: NightyNight.ArchiveURL.path) as? [NightyNight]
+        let x = NSKeyedUnarchiver.unarchiveObject(withFile: NightyNight.ArchiveURL.path) as? [NightyNight]
+        nights = x!
+        return x
     }
 }

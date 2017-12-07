@@ -52,7 +52,7 @@ class NightyNight : NSObject, NSCoding
         guard let id = aDecoder.decodeObject(forKey: PropertyKey.id) as? String
             else
         {
-            os_log("Unable to decode the name for a Meal object.", log: OSLog.default, type: .debug)
+            os_log("Unable to decode the name for a Night object.", log: OSLog.default, type: .debug)
             return nil
         }
         let eventStart = aDecoder.decodeObject(forKey: PropertyKey.eventStart)

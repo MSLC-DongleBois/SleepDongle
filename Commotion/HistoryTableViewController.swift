@@ -17,9 +17,10 @@ class HistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        saveSampleNights()
         // Load the sample data.
         loadNights()
-        //saveSampleNights()
+        
     }
 
     // MARK: - Table view data source

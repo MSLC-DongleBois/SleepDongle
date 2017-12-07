@@ -30,11 +30,13 @@ class NightWatchman
 
     func loadNights() -> [NightyNight]? {
         let x = NSKeyedUnarchiver.unarchiveObject(withFile: NightyNight.ArchiveURL.path) as? [NightyNight]
+      
         if let nightsArg = x {
             nights = nightsArg
         } else {
             nights = [NightyNight]()
         }
         return nights
+
     }
 }

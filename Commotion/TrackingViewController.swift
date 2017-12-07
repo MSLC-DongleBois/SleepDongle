@@ -13,11 +13,82 @@ class TrackingViewController: UIViewController {
     
     @IBOutlet weak var chartyBoi: LineChartView!
     
+    
+    @IBOutlet weak var barryBoi: BarChartView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        
+        let rawData = [7.0, 7.2, 6.0, 5.1, 7.2, 9.5, 8.2]
+        
+        drawBarChart(xLabels: daysOfWeek, yValues: rawData, label: "Average sleep per night")
+        
+        drawNightlyGraph()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    func drawBarChart(xLabels: [String], yValues: [Double], label: String) {
+        
+        // Set graph's bar color value
+        let barColor = [UIColor(red: 83/255, green: 200/255, blue: 240/255, alpha: 1)]
+        
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0 ..< xLabels.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: yValues[i])
+            dataEntries.append(dataEntry)
+        }
+        
+        
+        
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
+        chartDataSet.valueTextColor = UIColor.white
+        chartDataSet.valueFont = .systemFont(ofSize: 11)
+        chartDataSet.colors = barColor
+        let chartData = BarChartData(dataSet: chartDataSet)
+        
+        let chartFormatter = BarChartFormatter(labels: xLabels)
+        self.barryBoi.xAxis.valueFormatter = chartFormatter
+        
+        
+        // Labels
+        self.barryBoi.xAxis.labelTextColor = UIColor.white
+        self.barryBoi.leftAxis.labelTextColor = UIColor.white
+        
+        // Y-Axis
+        barryBoi.leftAxis.drawGridLinesEnabled = false
+        barryBoi.rightAxis.drawGridLinesEnabled = false
+        barryBoi.rightAxis.drawAxisLineEnabled = false
+        barryBoi.rightAxis.drawLabelsEnabled = false
+        barryBoi.leftAxis.drawAxisLineEnabled = false
+        barryBoi.leftAxis.drawLabelsEnabled = false
+        
+        // Get rid of legend and description
+        barryBoi.chartDescription?.text = ""
+        barryBoi.legend.enabled = false
+        
+        // X Axis
+        barryBoi.xAxis.drawGridLinesEnabled = false
+        barryBoi.xAxis.drawAxisLineEnabled = true
+        barryBoi.xAxis.axisLineWidth = 2
+        barryBoi.xAxis.axisLineColor = UIColor.white
+        barryBoi.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        barryBoi.xAxis.drawLabelsEnabled = true
+        barryBoi.xAxis.labelFont = .boldSystemFont(ofSize: 13)
+        
+        self.barryBoi.animate(yAxisDuration: 0.5, easingOption: .easeInSine)
+        
+        self.barryBoi.data = chartData
+        
+    }
+    
+    func drawNightlyGraph() {
         // Set background color of view
-        self.view.backgroundColor = UIColor.brown
+        self.view.backgroundColor = UIColor.black
         
         // Set color gradient values
         let topGradient = UIColor.init(red: 66/255, green: 244/255, blue: 78/255, alpha: 1).cgColor
@@ -29,29 +100,63 @@ class TrackingViewController: UIViewController {
         // Set graph's line color value
         let lineColor = UIColor.init(red: 0/255, green: 244/255, blue: 17/255, alpha: 1)
         
-        
         // Set dummy data
-        let dollars1 = [20.0, 15.0, 10.0, 10.0, 9.0, 11.0, 7.0, 9.0, 14.0, 11.0, 6.0, 3.0,
-                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
-                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
-                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
-                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
-                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
-                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0,
-                        20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        let sleepMovements = [20.0, 15.0, 10.0, 10.0, 9.0, 11.0, 7.0, 9.0, 14.0, 11.0, 6.0, 10,
+                        10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8,
+                        8, 8, 5, 6, 7, 4, 3, 15, 2.0, 4.0, 5.0, 4.0,
+                        0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4,
+                        6, 7, 8, 9, 10, 11, 10, 10, 9, 9, 10, 12,
+                        13, 14, 16, 18, 20, 19, 20, 10, 4, 4.0, 3, 4.0,
+                        10, 9, 9, 10, 10, 12, 11, 11, 11, 9, 8, 9,
+                        11, 12, 14, 13, 14, 14, 11, 10, 10, 12, 13, 15]
         
+//        let sleepMovements = [20.0, 15.0, 10.0, 10.0, 9.0, 11.0, 7.0, 9.0, 14.0, 11.0, 6.0, 10,
+//                              10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8,
+//                              8, 8, 5, 6, 7, 4, 3, 15, 2.0, 4.0, 5.0, 4.0,
+//                              0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4]
+        
+//        let startSleep = 23;
+//        let endSleep = 8;
+//
+//        // Format label strings
+//
+//
+//
+//        var tempString = "";
+//        var hours: [String] = [];
+//        var currCount = 0;
+//
+//        for i in 0 ..< sleepMovements.count {
+//            hours.append
+//        }
+        
+        
+        
+        //let hours = ["12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am"]
+        let hours = ["12am", "", "", "", "", "", "", "", "", "", "", "",
+                              "1am", "", "", "", "", "", "", "", "", "", "", "",
+                              "2am", "", "", "", "", "", "", "", "", "", "", "",
+                              "3am", "", "", "", "", "", "", "", "", "", "", "",
+                              "4am", "", "", "", "", "", "", "", "", "", "", "",
+                              "5am", "", "", "", "", "", "", "", "", "", "", "",
+                              "6am", "", "", "", "", "", "", "", "", "", "", "",
+                              "7am", "", "", "", "", "", "", "", "", "", "", ""]
         
         // Creating an array of data entries
-        var yValues : [ChartDataEntry] = [ChartDataEntry]()
+        var graphValues: [ChartDataEntry] = []
         
-        for i in 0 ..< dollars1.count {
-            yValues.append(ChartDataEntry(x: Double(i + 1), y: dollars1[i]))
+        for i in 0 ..< sleepMovements.count {
+            let dataEntry = ChartDataEntry(x: Double(i + 1), y: Double(sleepMovements[i]))
+            graphValues.append(dataEntry)
         }
         
-        let data = LineChartData()
         
-        let ds = LineChartDataSet(values: yValues, label: "Months")
+        let ds = LineChartDataSet(values: graphValues, label: "Months")
+        let data = LineChartData(dataSet: ds)
+        
+        let chartFormatter = IndexAxisValueFormatter(values: hours)
+        
+        self.chartyBoi.xAxis.valueFormatter = chartFormatter
         
         ds.setColor(lineColor)
         
@@ -69,7 +174,8 @@ class TrackingViewController: UIViewController {
         chartyBoi.rightAxis.drawGridLinesEnabled = false
         chartyBoi.rightAxis.drawAxisLineEnabled = false
         chartyBoi.rightAxis.drawLabelsEnabled = false
-        chartyBoi.leftAxis.drawLabelsEnabled = true
+        chartyBoi.leftAxis.drawLabelsEnabled = false
+        chartyBoi.leftAxis.labelTextColor = UIColor.white
         
         // Get rid of legend and description
         chartyBoi.chartDescription?.text = ""
@@ -80,27 +186,26 @@ class TrackingViewController: UIViewController {
         chartyBoi.xAxis.drawAxisLineEnabled = true
         chartyBoi.xAxis.labelPosition = XAxis.LabelPosition.bottom
         chartyBoi.xAxis.drawLabelsEnabled = true
+        chartyBoi.xAxis.labelFont = .systemFont(ofSize: 11)
         chartyBoi.xAxis.labelTextColor = UIColor.white
+    
+        // LABELS: X AXIS
+        self.chartyBoi.xAxis.centerAxisLabelsEnabled = true
+        self.chartyBoi.xAxis.setLabelCount(hours.count, force: false)
+        self.chartyBoi.xAxis.avoidFirstLastClippingEnabled = false
+        self.chartyBoi.xAxis.granularityEnabled = true
+        self.chartyBoi.xAxis.granularity = 1
         
         
-//        let quality = ["Awake", "Asleep", "Deep Sleep"]
-        let hours = ["12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am"]
-        //self.chartyBoi.xAxis.valueFormatter = IndexAxisValueFormatter(values: hours)
         
-//
-//        chartyBoi.xAxis.valueFormatter = IndexAxisValueFormatter(values: hours)
-//        chartyBoi.leftAxis.valueFormatter = IndexAxisValueFormatter(values: quality)
-//        chartyBoi.xAxis.granularity = 1
-//        chartyBoi.leftAxis.granularity = 1
-        
-        
+        // Animate the drawing of the chart
         chartyBoi.animate(yAxisDuration: 0.5, easingOption: .easeInCubic)
-        data.addDataSet(ds)
+        
+        //data.addDataSet(ds)
         self.chartyBoi.data = data
-    
-        // Do any additional setup after loading the view.
+        
+
     }
-    
     
 
     override func didReceiveMemoryWarning() {
@@ -119,4 +224,18 @@ class TrackingViewController: UIViewController {
     }
     */
 
+}
+
+private class BarChartFormatter: NSObject, IAxisValueFormatter {
+    
+    var labels: [String] = []
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return labels[Int(value)]
+    }
+    
+    init(labels: [String]) {
+        super.init()
+        self.labels = labels
+    }
 }

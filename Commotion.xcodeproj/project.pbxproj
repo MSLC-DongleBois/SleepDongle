@@ -24,8 +24,12 @@
 		FB1417A51FD709A500B41E39 /* AustinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */; };
 		FB1417A71FD71B1200B41E39 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417A61FD71B1200B41E39 /* HistoryTableViewCell.swift */; };
 		FB1417A91FD722D200B41E39 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417A81FD722D200B41E39 /* HistoryTableViewController.swift */; };
+		FB1417B11FD8A82C00B41E39 /* DPTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417AC1FD8A82B00B41E39 /* DPTimePicker.swift */; };
+		FB1417B21FD8A82C00B41E39 /* DPTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417AD1FD8A82B00B41E39 /* DPTimeCollectionViewCell.swift */; };
+		FB1417B31FD8A82C00B41E39 /* EZYGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417AE1FD8A82B00B41E39 /* EZYGradientView.swift */; };
+		FB1417B41FD8AC0600B41E39 /* DPTimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1417B01FD8A82C00B41E39 /* DPTimeCollectionViewCell.xib */; };
+		FB1417B51FD8AC1500B41E39 /* DPTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1417AF1FD8A82B00B41E39 /* DPTimePicker.xib */; };
 		FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */; };
-		FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A51FD5EE040019A7D1 /* ViewController.swift */; };
 		FBF205A81FD5F3380019A7D1 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */; };
 		FBF205AC1FD5F4CB0019A7D1 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */; };
 		FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */; };
@@ -76,8 +80,12 @@
 		FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AustinStoryboard.storyboard; sourceTree = "<group>"; };
 		FB1417A61FD71B1200B41E39 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		FB1417A81FD722D200B41E39 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		FB1417AC1FD8A82B00B41E39 /* DPTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTimePicker.swift; sourceTree = "<group>"; };
+		FB1417AD1FD8A82B00B41E39 /* DPTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB1417AE1FD8A82B00B41E39 /* EZYGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZYGradientView.swift; sourceTree = "<group>"; };
+		FB1417AF1FD8A82B00B41E39 /* DPTimePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DPTimePicker.xib; sourceTree = "<group>"; };
+		FB1417B01FD8A82C00B41E39 /* DPTimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DPTimeCollectionViewCell.xib; sourceTree = "<group>"; };
 		FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FBF205A51FD5EE040019A7D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		FBF205AB1FD5F4CB0019A7D1 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		FBF205AD1FD5F4E90019A7D1 /* HistoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +162,11 @@
 			isa = PBXGroup;
 			children = (
 				B62ED3A21D7F299D00B503DF /* AppDelegate.swift */,
+				FB1417AD1FD8A82B00B41E39 /* DPTimeCollectionViewCell.swift */,
+				FB1417B01FD8A82C00B41E39 /* DPTimeCollectionViewCell.xib */,
+				FB1417AC1FD8A82B00B41E39 /* DPTimePicker.swift */,
+				FB1417AF1FD8A82B00B41E39 /* DPTimePicker.xib */,
+				FB1417AE1FD8A82B00B41E39 /* EZYGradientView.swift */,
 				B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */,
 				B68B9D491D7F6EA8002037A3 /* GameViewController.swift */,
 				B62ED3A61D7F299D00B503DF /* Main.storyboard */,
@@ -163,7 +176,6 @@
 				02619F3A1FD716D100C884C3 /* DoctorPhill.swift */,
 				FBF205A11FD5EC6D0019A7D1 /* HomeViewController.swift */,
 				02619F381FD7100C00C884C3 /* NightyNight.swift */,
-				FBF205A51FD5EE040019A7D1 /* ViewController.swift */,
 				FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */,
 				FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */,
 				FBF205A71FD5F3380019A7D1 /* TrackingViewController.swift */,
@@ -308,9 +320,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1417B41FD8AC0600B41E39 /* DPTimeCollectionViewCell.xib in Resources */,
 				B62ED3AD1D7F299D00B503DF /* LaunchScreen.storyboard in Resources */,
 				B62ED3AA1D7F299D00B503DF /* Assets.xcassets in Resources */,
 				B62ED3A81D7F299D00B503DF /* Main.storyboard in Resources */,
+				FB1417B51FD8AC1500B41E39 /* DPTimePicker.xib in Resources */,
 				FB1417A51FD709A500B41E39 /* AustinStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,15 +408,17 @@
 				FBF205AC1FD5F4CB0019A7D1 /* AlarmViewController.swift in Sources */,
 				FBF205B01FD6FA220019A7D1 /* PageViewController.swift in Sources */,
 				FB1417A71FD71B1200B41E39 /* HistoryTableViewCell.swift in Sources */,
-				FBF205A61FD5EE040019A7D1 /* ViewController.swift in Sources */,
 				FBF205A21FD5EC6D0019A7D1 /* HomeViewController.swift in Sources */,
 				68E0C7F01FD71A28006398F2 /* SleepyBoye.swift in Sources */,
 				FB1417A31FD7099B00B41E39 /* CoreMotionManager.swift in Sources */,
 				B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */,
 				02619F391FD7100C00C884C3 /* NightyNight.swift in Sources */,
+				FB1417B11FD8A82C00B41E39 /* DPTimePicker.swift in Sources */,
 				FBF205B21FD7003D0019A7D1 /* PageContentViewController.swift in Sources */,
 				0228B1E71FD8AD47006BBBF9 /* NightWatchman.swift in Sources */,
 				FBF205AE1FD5F4E90019A7D1 /* HistoryItemViewController.swift in Sources */,
+				FB1417B21FD8A82C00B41E39 /* DPTimeCollectionViewCell.swift in Sources */,
+				FB1417B31FD8A82C00B41E39 /* EZYGradientView.swift in Sources */,
 				FBF205A81FD5F3380019A7D1 /* TrackingViewController.swift in Sources */,
 				B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */,
 				B62ED3A31D7F299D00B503DF /* AppDelegate.swift in Sources */,
@@ -570,6 +586,7 @@
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.Commotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -586,6 +603,7 @@
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.Commotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;

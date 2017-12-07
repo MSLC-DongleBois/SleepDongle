@@ -1,9 +1,9 @@
 //
 //  PageContentViewController.swift
-//  Commotion
+//  SleepDongle
 //
-//  Created by Kellen Schmidt on 12/5/17.
-//  Copyright © 2017 Eric Larson. All rights reserved.
+//  Created by Kellen Schmidt on 11/21/17.
+//  Copyright © 2017 Kellen Schmidt. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,6 @@ import UIKit
 class PageContentViewController: UIViewController {
 
     @IBOutlet weak var testLabel: UILabel!
-    
     var pageIndex: Int = 0
     var strTitle: String!
     
@@ -21,12 +20,6 @@ class PageContentViewController: UIViewController {
         // Do any additional setup after loading the view.
         testLabel.text = strTitle
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

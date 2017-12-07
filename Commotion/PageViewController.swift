@@ -1,9 +1,9 @@
 //
 //  PageViewController.swift
-//  Commotion
+//  SleepDongle
 //
-//  Created by Kellen Schmidt on 12/5/17.
-//  Copyright © 2017 Eric Larson. All rights reserved.
+//  Created by Kellen Schmidt on 11/21/17.
+//  Copyright © 2017 Kellen Schmidt. All rights reserved.
 //
 
 import UIKit
@@ -58,7 +58,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return pageContentViewController
     }
     
-
     /*
     // MARK: - Navigation
 

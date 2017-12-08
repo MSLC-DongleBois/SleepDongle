@@ -214,11 +214,13 @@ class HistoryItemViewController: UIViewController {
         self.roundyBoi.chartDescription?.text = ""
         
         self.roundyBoi.holeRadiusPercent = 0.38
+        
         //        self.roundyBoi.drawHoleEnabled = false
         
         self.roundyBoi.holeColor = UIColor.clear
         self.roundyBoi.legend.textColor = UIColor.white
         self.roundyBoi.legend.position = .belowChartCenter
+        self.roundyBoi.animate(xAxisDuration: 0.75, yAxisDuration: 0.75, easingOption: .easeInSine)
         
         self.roundyBoi.legend.drawInside = false
         self.roundyBoi.legend.wordWrapEnabled = true
@@ -259,7 +261,14 @@ class HistoryItemViewController: UIViewController {
         let minutes = Calendar.current.component(.minute, from: date)
         let hours = Calendar.current.component(.hour, from: date)
         
-        return String(format: "%0.2dhr %0.2dmin", hours, minutes)
+        var returnString: String = ""
+        if(hours > 12) {
+            returnString = String(format: "%0.2d:%0.2dpm", hours/2, minutes)
+        } else {
+            returnString = String(format: "%0.2d:%0.2dam", hours, minutes)
+        }
+        
+        return returnString
     }
 
 }

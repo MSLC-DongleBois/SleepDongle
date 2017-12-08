@@ -24,7 +24,19 @@ class HistoryItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        drawNightlyGraph()
+        // Set dummy data
+//        let sleepMovements = [20, 15, 10, 10, 9, 11, 7, 9, 14, 11, 6, 10,
+//                              10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8,
+//                              8, 8, 5, 6, 7, 4, 3, 15, 2, 4, 5, 4,
+//                              0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4,
+//                              6, 7, 8, 9, 10, 11, 10, 10, 9, 9, 10, 12,
+//                              13, 14, 16, 18, 20, 19, 20, 10, 4, 4, 3, 4,
+//                              10, 9, 9, 10, 10, 12, 11, 11, 11, 9, 8, 9,
+//                              11, 12, 14, 13, 14, 14, 11, 10, 10, 12, 13, 15]
+        let sleepMovements = cellData?.motionEvents
+        let startHour = Calendar.current.component(.hour, from: (cellData?.eventStart)!);
+        
+        drawNightlyGraph(sleepMovements: sleepMovements!, startHour: startHour)
 
         // Do any additional setup after loading the view.
         
@@ -44,7 +56,10 @@ class HistoryItemViewController: UIViewController {
         cellData?.userClassification = sender.selectedSegmentIndex
     }
     
-    func drawNightlyGraph() {
+    func drawNightlyGraph(sleepMovements: [Int], startHour: Int) {
+        
+        var startSleep = startHour
+        
         // Set background color of view
         self.view.backgroundColor = UIColor.black
         
@@ -57,32 +72,13 @@ class HistoryItemViewController: UIViewController {
         
         // Set graph's line color value
         let lineColor = UIColor.init(red: 0/255, green: 244/255, blue: 17/255, alpha: 1)
-        
-        // Set dummy data
-        let sleepMovements = [20.0, 15.0, 10.0, 10.0, 9.0, 11.0, 7.0, 9.0, 14.0, 11.0, 6.0, 10,
-                              10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8,
-                              8, 8, 5, 6, 7, 4, 3, 15, 2.0, 4.0, 5.0, 4.0,
-                              0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4,
-                              6, 7, 8, 9, 10, 11, 10, 10, 9, 9, 10, 12,
-                              13, 14, 16, 18, 20, 19, 20, 10, 4, 4.0, 3, 4.0,
-                              10, 9, 9, 10, 10, 12, 11, 11, 11, 9, 8, 9,
-                              11, 12, 14, 13, 14, 14, 11, 10, 10, 12, 13, 15]
-        
-        //        let sleepMovements = [20.0, 15.0, 10.0, 10.0, 9.0, 11.0, 7.0, 9.0, 14.0, 11.0, 6.0, 10,
-        //                              10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8,
-        //                              8]
-        
-        var startSleep = 3;
-        //
-        //        // Format label strings
-        //
-        //
-        //
+
+        // Format label strings
         var tempString = "";
         var hours: [String] = [];
         var currCount = 0;
         
-        for i in 0 ..< sleepMovements.count {
+        for _ in 0 ..< sleepMovements.count {
             if (currCount % 12 == 0) {
                 if (startSleep == 12) {
                     tempString = "12pm"
@@ -108,6 +104,10 @@ class HistoryItemViewController: UIViewController {
             
             currCount += 1
         }
+        
+//        let placeholder = hours[0]
+//        hours[0] = hours[1]
+//        hours[1] = placeholder
         
         print(hours)
         
@@ -173,20 +173,16 @@ class HistoryItemViewController: UIViewController {
         // LABELS: X AXIS
         self.chartyBoi.xAxis.centerAxisLabelsEnabled = true
         self.chartyBoi.xAxis.setLabelCount(hours.count, force: false)
-        self.chartyBoi.xAxis.avoidFirstLastClippingEnabled = false
+        self.chartyBoi.xAxis.avoidFirstLastClippingEnabled = true
         self.chartyBoi.xAxis.granularityEnabled = true
         self.chartyBoi.xAxis.granularity = 1
-        
-        
         
         // Animate the drawing of the chart
         chartyBoi.animate(yAxisDuration: 0.5, easingOption: .easeInCubic)
         
         //data.addDataSet(ds)
         self.chartyBoi.data = data
-        
-        
-        
+
     }
     
     /*

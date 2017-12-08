@@ -14,7 +14,8 @@ class TrackingViewController: UIViewController {
     @IBOutlet weak var chartyBoi: LineChartView!
     
     
-    @IBOutlet weak var barryBoi: BarChartView!
+    @IBOutlet weak var roundyBoi: PieChartView!
+    
     
     
     override func viewDidLoad() {
@@ -24,78 +25,133 @@ class TrackingViewController: UIViewController {
         
         let rawData = [7.0, 7.2, 6.0, 5.1, 7.2, 9.5, 8.2]
         
-        drawBarChart(xLabels: daysOfWeek, yValues: rawData, label: "Average sleep per night")
+//        drawBarChart(xLabels: daysOfWeek, yValues: rawData, label: "Average sleep per night")
+        
+        let sleepQual = ["Deep Sleep", "Light Sleep", "Awake"]
+        
+        let sleepQuant = [29.5, 60.2, 10.3]
+        
+        drawPieChart(dataPoints: sleepQual, values: sleepQuant)
         
         drawNightlyGraph()
         
         // Do any additional setup after loading the view.
     }
     
-    func drawBarChart(xLabels: [String], yValues: [Double], label: String) {
+    func drawPieChart(dataPoints: [String], values: [Double]) {
         
-        // Set graph's bar color value
-        let barColor = [UIColor(red: 83/255, green: 200/255, blue: 240/255, alpha: 1)]
         
-        var averageVal: Double = 0
-        
-        var dataEntries: [BarChartDataEntry] = []
-        
-        for i in 0 ..< xLabels.count {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: yValues[i])
-            dataEntries.append(dataEntry)
-            averageVal += yValues[i]
+        var entries = [PieChartDataEntry]()
+        for (index, value) in values.enumerated() {
+            let entry = PieChartDataEntry()
+            entry.y = value
+            entry.label = dataPoints[index]
+            entries.append(entry)
         }
-        averageVal = averageVal / Double(yValues.count)
-        averageVal = Double(round(averageVal * 100)/100)
-        let averageLabel = "Average: " + String(averageVal)
-        let averageLine = ChartLimitLine(limit: averageVal, label: averageLabel)
-        averageLine.lineColor = UIColor(red: 25/255, green: 91/255, blue: 218/255, alpha: 1)
-        averageLine.valueTextColor = UIColor.white
-        averageLine.labelPosition = .rightBottom
+        
+        // 3. chart setup
+        let set = PieChartDataSet( values: entries, label: "")
         
         
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
-        chartDataSet.valueTextColor = UIColor.white
-        chartDataSet.valueFont = .systemFont(ofSize: 11)
-        chartDataSet.colors = barColor
-        let chartData = BarChartData(dataSet: chartDataSet)
-        
-        let chartFormatter = BarChartFormatter(labels: xLabels)
-        self.barryBoi.xAxis.valueFormatter = chartFormatter
+        // this is custom extension method. Download the code for more details.
+        var colors: [UIColor] = []
+        colors.append(UIColor(red: 6/255, green: 80/255, blue: 201/255, alpha: 1))
+        colors.append(UIColor(red: 0/255, green: 150/255, blue: 32/255, alpha: 1))
+        colors.append(UIColor(red: 229/255, green: 101/255, blue: 41/255, alpha: 1))
         
         
-        // Labels
-        self.barryBoi.xAxis.labelTextColor = UIColor.white
-        self.barryBoi.leftAxis.labelTextColor = UIColor.white
+//        for _ in 0..<values.count {
+//            let red = Double(arc4random_uniform(256))
+//            let green = Double(arc4random_uniform(256))
+//            let blue = Double(arc4random_uniform(256))
+//            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+//            colors.append(color)
+//        }
         
-        // Y-Axis
-        barryBoi.leftAxis.drawGridLinesEnabled = false
-        barryBoi.rightAxis.drawGridLinesEnabled = false
-        barryBoi.rightAxis.drawAxisLineEnabled = false
-        barryBoi.rightAxis.drawLabelsEnabled = false
-        barryBoi.leftAxis.drawAxisLineEnabled = false
-        barryBoi.leftAxis.drawLabelsEnabled = false
+        set.colors = colors
+        let data = PieChartData(dataSet: set)
+        self.roundyBoi.data = data
         
-        // Get rid of legend and description
-        barryBoi.chartDescription?.text = ""
-        barryBoi.legend.enabled = false
+        self.roundyBoi.chartDescription?.text = ""
         
-        // X Axis
-        barryBoi.xAxis.drawGridLinesEnabled = false
-        barryBoi.xAxis.drawAxisLineEnabled = true
-        barryBoi.xAxis.axisLineWidth = 2
-        barryBoi.xAxis.axisLineColor = UIColor.white
-        barryBoi.xAxis.labelPosition = XAxis.LabelPosition.bottom
-        barryBoi.xAxis.drawLabelsEnabled = true
-        barryBoi.xAxis.labelFont = .boldSystemFont(ofSize: 13)
+        self.roundyBoi.holeRadiusPercent = 0.38
+//        self.roundyBoi.drawHoleEnabled = false
+        self.roundyBoi.holeColor = UIColor.clear
+        self.roundyBoi.legend.textColor = UIColor.white
+        self.roundyBoi.legend.position = .belowChartCenter
+        self.roundyBoi.legend.wordWrapEnabled = true
         
-        
-        self.barryBoi.rightAxis.addLimitLine(averageLine)
-        self.barryBoi.animate(yAxisDuration: 0.5, easingOption: .easeInSine)
-        
-        self.barryBoi.data = chartData
+        self.roundyBoi.legend.font = .boldSystemFont(ofSize: 10)
+        self.roundyBoi.transparentCircleColor = UIColor.clear
+//        self.view.addSubview(chart)
         
     }
+    
+//    func drawBarChart(xLabels: [String], yValues: [Double], label: String) {
+//
+//        // Set graph's bar color value
+//        let barColor = [UIColor(red: 83/255, green: 200/255, blue: 240/255, alpha: 1)]
+//
+//        var averageVal: Double = 0
+//
+//        var dataEntries: [BarChartDataEntry] = []
+//
+//        for i in 0 ..< xLabels.count {
+//            let dataEntry = BarChartDataEntry(x: Double(i), y: yValues[i])
+//            dataEntries.append(dataEntry)
+//            averageVal += yValues[i]
+//        }
+//        averageVal = averageVal / Double(yValues.count)
+//        averageVal = Double(round(averageVal * 100)/100)
+//        let averageLabel = "Average: " + String(averageVal)
+//        let averageLine = ChartLimitLine(limit: averageVal, label: averageLabel)
+//        averageLine.lineColor = UIColor(red: 25/255, green: 91/255, blue: 218/255, alpha: 1)
+//        averageLine.valueTextColor = UIColor.white
+//        averageLine.labelPosition = .rightBottom
+//
+//
+//        let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
+//        chartDataSet.valueTextColor = UIColor.white
+//        chartDataSet.valueFont = .systemFont(ofSize: 11)
+//        chartDataSet.colors = barColor
+//        let chartData = BarChartData(dataSet: chartDataSet)
+//
+//        let chartFormatter = BarChartFormatter(labels: xLabels)
+//        self.barryBoi.xAxis.valueFormatter = chartFormatter
+//
+//
+//        // Labels
+//        self.barryBoi.xAxis.labelTextColor = UIColor.white
+//        self.barryBoi.leftAxis.labelTextColor = UIColor.white
+//
+//        // Y-Axis
+//        barryBoi.leftAxis.drawGridLinesEnabled = false
+//        barryBoi.rightAxis.drawGridLinesEnabled = false
+//        barryBoi.rightAxis.drawAxisLineEnabled = false
+//        barryBoi.rightAxis.drawLabelsEnabled = false
+//        barryBoi.leftAxis.drawAxisLineEnabled = false
+//        barryBoi.leftAxis.drawLabelsEnabled = false
+//
+//        // Get rid of legend and description
+//        barryBoi.chartDescription?.text = ""
+//        barryBoi.legend.enabled = false
+//
+//        // X Axis
+//        barryBoi.xAxis.drawGridLinesEnabled = false
+//        barryBoi.xAxis.drawAxisLineEnabled = true
+//        barryBoi.xAxis.axisLineWidth = 2
+//        barryBoi.xAxis.axisLineColor = UIColor.white
+//        barryBoi.xAxis.labelPosition = XAxis.LabelPosition.bottom
+//        barryBoi.xAxis.drawLabelsEnabled = true
+//        barryBoi.xAxis.labelFont = .boldSystemFont(ofSize: 13)
+//
+//
+//        self.barryBoi.rightAxis.addLimitLine(averageLine)
+//        self.barryBoi.animate(yAxisDuration: 0.5, easingOption: .easeInSine)
+//
+//        self.barryBoi.data = chartData
+//
+//    }
     
     func drawNightlyGraph() {
         // Set background color of view

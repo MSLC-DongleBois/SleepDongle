@@ -315,8 +315,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="554-yC-r4j" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="23" y="409" width="328" height="207"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AoQ-fK-dzN" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="338" width="314" height="309"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -324,8 +324,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="barryBoi" destination="554-yC-r4j" id="juH-a1-d8w"/>
                         <outlet property="chartyBoi" destination="bfY-dD-wxI" id="byo-dn-XlQ"/>
+                        <outlet property="roundyBoi" destination="AoQ-fK-dzN" id="ryq-TG-JSK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlf-hc-ShH" userLabel="First Responder" sceneMemberID="firstResponder"/>

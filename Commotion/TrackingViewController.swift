@@ -13,6 +13,7 @@ class TrackingViewController: UIViewController {
     
     let currentBrightness = UIScreen.main.brightness
     var alarmTime: Date? = nil
+    var dopplerBoi: BrightnessViewController = BrightnessViewController()
 
     var drPhill = DoctorPhill()
     let cmManager = CoreMotionManager()

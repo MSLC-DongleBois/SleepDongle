@@ -16,7 +16,7 @@ extension AlarmViewController: DPTimePickerDelegate {
         formatter.dateFormat = "HH:mm"
         alarmTime = formatter.date(from: "\(hour):\(minute)")!
         
-        var trackingVC = TrackingViewController()
+        let trackingVC = TrackingViewController()
         trackingVC.alarmTime = alarmTime
         self.navigationController?.pushViewController(trackingVC, animated: true)
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class TrackingViewController: UIViewController {
     
@@ -16,12 +17,25 @@ class TrackingViewController: UIViewController {
     var drPhill = DoctorPhill()
     let cmManager = CoreMotionManager()
     
+    let notificationIdentifier = "myNotification"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Alarm time: \(alarmTime)")
-      
+        var dateStuff = DateComponents()
+        let calendar = Calendar.current
+        dateStuff.hour = calendar.component(.hour, from: alarmTime!)
+        dateStuff.minute = calendar.component(.minute, from: alarmTime!)
+        dateStuff.year = 2017
+        print("DATESTUFF",dateStuff)
+        let elapsed = 5
+        let duration = Double(elapsed)
+        self.notify(inSeconds: duration, completion: { success in
+            if success {
+                print("successful scheduling")
+            } else {
+                print("error scheduling")
+            }
+        })
         UIApplication.shared.isIdleTimerDisabled = true
         UIApplication.shared.isStatusBarHidden = false
         NotificationCenter.default.addObserver(self, selector: #selector(deviceChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
@@ -76,6 +90,29 @@ class TrackingViewController: UIViewController {
             UIScreen.main.brightness = currentBrightness
 //            self.screenOff.isHidden = true
             UIApplication.shared.isStatusBarHidden = false
+        }
+    }
+    
+    func notify(inSeconds: TimeInterval, completion: @escaping (Bool) -> ()) {
+        // create notification content
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default()
+        content.title = "ALARM"
+        content.body = "Rise and shine! It's morning time!"
+        print("inSeconds:",inSeconds)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+        if let alarm = alarmTime {
+            print(alarm)
+            print("ALARM INITIALLY SET")
+            let request = UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+                if error != nil {
+                    print("ERROR w/ notification!")
+                    completion(false)
+                } else {
+                    completion(true)
+                }
+            })
         }
     }
     

@@ -16,6 +16,9 @@ class HistoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.backgroundColor = UIColor.black
+        
 
         saveSampleNights()
         // Load the sample data.

@@ -86,8 +86,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HistoryTableViewCell" rowHeight="90" id="OAL-tL-4kB" customClass="HistoryTableViewCell" customModule="Commotion" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HistoryTableViewCell" rowHeight="90" id="OAL-tL-4kB" customClass="HistoryTableViewCell" customModule="Commotion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OAL-tL-4kB" id="Ole-ST-sAj">
@@ -119,7 +120,7 @@
                                         <constraint firstItem="uQ6-tX-Bas" firstAttribute="top" secondItem="Ole-ST-sAj" secondAttribute="top" id="p6R-Ml-mFX"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="7sN-JR-Rsd" id="XUA-4o-jvD"/>
                                     <outlet property="scoreLabel" destination="uQ6-tX-Bas" id="EVQ-r7-bnt"/>
@@ -393,7 +394,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="snE-Da-KPt" firstAttribute="leading" secondItem="pFC-0q-K5K" secondAttribute="leadingMargin" constant="-16" id="4n1-xx-ZaQ"/>
                             <constraint firstItem="23i-DR-G4F" firstAttribute="centerX" secondItem="pFC-0q-K5K" secondAttribute="centerX" id="7Em-8P-J2W"/>

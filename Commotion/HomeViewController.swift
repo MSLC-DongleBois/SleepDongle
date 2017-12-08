@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
         saveSampleNights()
 
         // Do any additional setup after loading the view.
-        startTrackingButton.layer.cornerRadius = 4
-        sleepHistoryButton.layer.cornerRadius = 4
+        startTrackingButton.layer.cornerRadius = 6
+        sleepHistoryButton.layer.cornerRadius = 6
         
     }
     
@@ -66,34 +66,28 @@ class HomeViewController: UIViewController {
     private func saveSampleNights()
     {
         let night = NightWatchman()
-        var temp: NightyNight = NightyNight(start: Date(timeIntervalSinceNow: -100000), end: Date(timeIntervalSinceNow: -80000), alarm: Date(), events: [20, 15, 10, 10, 9, 11, 7, 9, 14, 11, 6, 10, 10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8, 8, 8, 5, 6, 7, 4, 3, 15, 2, 4, 5, 4, 0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4], length: DateInterval(), score: 100, deepPer: 13.64, lightPer: 52.55, awakePer: 33.81, classification: 1)
-        temp = SleepyBoye.analyzeNight(data: temp)
+        var temp: NightyNight = NightyNight(start: Date(timeIntervalSinceNow: -90000), end: Date(timeIntervalSinceNow: -69696), alarm: Date(), events: [20, 15, 10, 10, 9, 11, 7, 9, 14, 11, 6, 10, 10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8, 8, 8, 5, 6, 7, 4, 3, 15, 2, 4, 5, 4, 0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4, 4, 5, 4, 0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4, 2, 4, 5, 4, 0, 0, 1, 0, 2, 3], length: DateInterval(), score: 100, deepPer: 13.64, lightPer: 52.55, awakePer: 33.81, classification: 1)
         night.nights.append(temp)
         
-        temp = NightyNight(start: Date(timeIntervalSinceNow: -50000), end: Date(timeIntervalSinceNow: -5000), alarm: Date(), events: [6, 7, 8, 9, 10, 11, 10, 10, 9, 9, 10, 12, 13, 14, 16, 18, 20, 19, 20, 10, 4, 4, 3, 4, 10, 9, 9, 10, 10, 12, 11, 11, 11, 9, 8, 9, 11, 12, 14, 13, 14, 14, 11, 10, 10, 12, 13, 15], length: DateInterval(), score: 1, deepPer: 71, lightPer: 22.90, awakePer: 6.1, classification: 2)
-        temp = SleepyBoye.analyzeNight(data: temp)
+        temp = NightyNight(start: Date(timeIntervalSinceNow: -130000), end: Date(timeIntervalSinceNow: -115000), alarm: Date(), events: [6, 7, 8, 9, 10, 11, 10, 10, 9, 9, 10, 12, 13, 14, 16, 18, 20, 19, 20, 10, 4, 4, 3, 4, 10, 9, 9, 10, 10, 12, 11, 11, 11, 9, 8, 9, 11, 12, 14, 13, 14, 14, 11, 10, 10, 12, 13, 15, 6, 7, 8, 9, 10, 11, 10, 10, 9, 9, 10, 12, 13, 14, 16, 18, 20, 19, 20, 10, 4, 4, 3, 4, 10, 9, 9, 10, 10, 12, 11, 11, 11, 9, 8, 9, 11, 12, 14, 13, 14, 14, 11, 11, 11, 11, 9, 8, 9, 11, 12, 14, 13, 14, 14, 11, 14, 14, 11], length: DateInterval(), score: 1, deepPer: 71, lightPer: 22.90, awakePer: 6.1, classification: 2)
         night.nights.append(temp)
         
-        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 33, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
-        temp = SleepyBoye.analyzeNight(data: temp)
+        temp = NightyNight(start: Date(timeIntervalSinceNow: -220000), end: Date(timeIntervalSinceNow: -190000), alarm: Date(), events: [20, 15, 10, 10, 9, 11, 7, 9, 14, 11, 6, 10, 10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8, 8, 8, 5, 6, 7, 4, 3, 15, 2, 4, 5, 4, 0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 10, 9, 9, 10, 10, 12, 11, 11, 11, 9, 8, 9, 11, 12, 14, 13, 14, 14, 11, 10, 10, 0, 1, 0, 2, 3,9,9,8,9,0,8,9,8,7,5,5,5,4,3,5,4,3,4,5,6,4,3,2,2,1,2,3,2,1,1,1,2,1,2,2,1,2,1,2,1,2,3,4,1,1], length: DateInterval(), score: 33, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: nil)
         night.nights.append(temp)
         
-        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 55, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
-        temp = SleepyBoye.analyzeNight(data: temp)
+        temp = NightyNight(start: Date(timeIntervalSinceNow: -320000), end: Date(timeIntervalSinceNow: -300000), alarm: Date(), events: [0, 1, 0, 1, 0, 0, 0, 0, 6, 8, 9, 9, 1, 1, 4,3,2,2,1,2,3,2,1,1,1,2,1,2,2,1,2,11, 11, 9, 8, 9, 11, 12, 14, 13, 14, 14, 11, 10, 10, 12, 13], length: DateInterval(), score: 55, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: nil)
         night.nights.append(temp)
         
-        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 18, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
-        temp = SleepyBoye.analyzeNight(data: temp)
+        temp = NightyNight(start: Date(timeIntervalSinceNow: -400000), end: Date(timeIntervalSinceNow: -370000), alarm: Date(), events: [9, 8, 7, 7, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 5, 3, 4, 5, 4, 3, 2, 0, 0, 0, 0, 0, 0, 0, 10, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 1, 1, 1, 0, 0, 0, 3, 2, 0, 0, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 6, 8, 9, 9, 1, 1], length: DateInterval(), score: 18, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
         night.nights.append(temp)
         
-        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 97, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
-        temp = SleepyBoye.analyzeNight(data: temp)
+        temp = NightyNight(start: Date(timeIntervalSinceNow: -520000), end: Date(timeIntervalSinceNow: -490000), alarm: Date(), events: [9,9,8,9,9,6,6,7,8,9,9,10,7,6,5,4,3,4,5,6,4,3,2,2,1,9,9,8,9,9,6,6,7,2,1,2,2,1,2,1,2,1,2,7,6,5,4,3,2,3,2,4,5,3,4,1,1,1,2,3,3,7,8,9,0,0,0,2,2,3,3,2,2,1,2,3,2,1,4,5,5,7,7,8], length: DateInterval(), score: 97, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
         night.nights.append(temp)
         
-        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [9,9,8,9,0,8,9,8,7,5,5,5,4,3,5,4,3,4,5,6,4,3,2,2,1,2,3,2,1,1,1,2,1,2,2,1,2,1,2,1,2,3,4,1,1,1,2,3,3,7,6,5,4,3,2,3,2,4,5,7,8,9,0,0,0,9,8,7,6,6,5,4,5,6,7,8,6,5,5,7,7,8], length: DateInterval(), score: 97, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
-        temp = SleepyBoye.analyzeNight(data: temp)
+        temp = NightyNight(start: Date(timeIntervalSinceNow: -600000), end: Date(timeIntervalSinceNow: -570000), alarm: Date(), events: [9,9,8,9,0,8,9,8,7,5,5,5,4,3,5,4,3,4,5,6,4,3,2,2,1,2,3,2,1,1,1,2,1,2,2,1,2,1,2,1,2,3,4,1,1,1,2,3,3,7,6,5,4,3,2,3,2,4,5,7,8,9,0,0,0,9,8,7,6,6,5,4,5,6,7,8,6,5,5,7,7,8], length: DateInterval(), score: 97, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
         night.nights.append(temp)
         
+        night.nights = SleepyBoye.analyzeNights(dataArray: night.nights)
         night.saveNights()
     }
 

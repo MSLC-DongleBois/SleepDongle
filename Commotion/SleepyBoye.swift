@@ -11,8 +11,7 @@ import Foundation
 
 class SleepyBoye: NSObject {
     
-    static func analyzeNight(data: NightyNight)->NightyNight
-    {
+    static func analyzeNight(data: NightyNight) -> NightyNight {
         var deepSleep: Int = 0
         var lightSleep: Int = 0
         var awake: Int = 0
@@ -65,8 +64,14 @@ class SleepyBoye: NSObject {
         }
         
         return data
-        
     }
     
+    static func analyzeNights(dataArray: [NightyNight]) -> [NightyNight] {
+        var analyzedNights: [NightyNight] = [NightyNight]()
+        for night in dataArray {
+            analyzedNights.append(SleepyBoye.analyzeNight(data: night))
+        }
+        return analyzedNights
+    }
     
 }

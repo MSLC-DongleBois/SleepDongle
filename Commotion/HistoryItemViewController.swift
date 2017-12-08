@@ -46,8 +46,7 @@ class HistoryItemViewController: UIViewController {
             let hue: CGFloat = CGFloat(Double(sleepScore) * 100.0 / 100.0 / 360.0)
             scoreLabel.textColor = UIColor(hue: hue, saturation: 1.0, brightness: 0.8, alpha: 1.0)
             
-            let lengthOfSleep: DateInterval = DateInterval(start: cellData.eventStart, end: cellData.eventEnd)
-            totalLengthLabel.text = stringFromTimeInterval(interval: lengthOfSleep.duration)
+            totalLengthLabel.text = stringFromTimeInterval(interval: cellData.lengthOfSleep.duration)
             startLabel.text = timeStringFromDate(date: cellData.eventStart)
             endLabel.text = timeStringFromDate(date: cellData.eventEnd)
             
@@ -263,7 +262,7 @@ class HistoryItemViewController: UIViewController {
         
         var returnString: String = ""
         if(hours > 12) {
-            returnString = String(format: "%0.2d:%0.2dpm", hours/2, minutes)
+            returnString = String(format: "%0.2d:%0.2dpm", hours%12, minutes)
         } else {
             returnString = String(format: "%0.2d:%0.2dam", hours, minutes)
         }

@@ -35,7 +35,7 @@ extension AlarmViewController: DPTimePickerDelegate {
 class AlarmViewController: UIViewController {
 
     let timePicker: DPTimePicker = DPTimePicker.timePicker()
-    let mainColor = UIColor.green
+    let mainColor = UIColor(red: 25/255, green: 91/255, blue: 218/255, alpha: 1.0)
     let accentColor = UIColor.black
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -29,6 +29,7 @@
 		B62ED3C31D7F299D00B503DF /* CommotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62ED3C21D7F299D00B503DF /* CommotionUITests.swift */; };
 		B68B9D4A1D7F6EA8002037A3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B9D491D7F6EA8002037A3 /* GameViewController.swift */; };
 		B68B9D4C1D7F6EFA002037A3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */; };
+		D9D22C841FDACA1200A74850 /* dragon.caf in Resources */ = {isa = PBXBuildFile; fileRef = D9D22C831FDACA0700A74850 /* dragon.caf */; };
 		DC309300EC9395B1C614F50B /* Pods_Commotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7959272720AE2D66BC688D8C /* Pods_Commotion.framework */; };
 		FB1417A31FD7099B00B41E39 /* CoreMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */; };
 		FB1417A51FD709A500B41E39 /* AustinStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */; };
@@ -69,7 +70,6 @@
 		02619F381FD7100C00C884C3 /* NightyNight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightyNight.swift; sourceTree = "<group>"; };
 		02619F3A1FD716D100C884C3 /* DoctorPhill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorPhill.swift; sourceTree = "<group>"; };
 		02DBACDE1FDAAB2C0086B7E5 /* Novocaine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
-		02DBACDF1FDAAB3B0086B7E5 /* dragon.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.caf; sourceTree = "<group>"; };
 		19CC39CD490DEB0159FBE2FF /* Pods-Commotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Commotion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Commotion/Pods-Commotion.debug.xcconfig"; sourceTree = "<group>"; };
 		6817082A1FDA972800DBB7EB /* CubicSpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubicSpline.h; sourceTree = "<group>"; };
 		6817082B1FDA972800DBB7EB /* BufferedOverlapQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BufferedOverlapQueue.m; sourceTree = "<group>"; };
@@ -107,6 +107,7 @@
 		B62ED3C41D7F299D00B503DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68B9D491D7F6EA8002037A3 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B68B9D4B1D7F6EFA002037A3 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D9D22C831FDACA0700A74850 /* dragon.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.caf; sourceTree = "<group>"; };
 		E041550C4E1E55F90CBFD7BE /* Pods-Commotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Commotion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Commotion/Pods-Commotion.release.xcconfig"; sourceTree = "<group>"; };
 		FB1417A21FD7099B00B41E39 /* CoreMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreMotionManager.swift; sourceTree = "<group>"; };
 		FB1417A41FD709A400B41E39 /* AustinStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AustinStoryboard.storyboard; sourceTree = "<group>"; };
@@ -202,6 +203,7 @@
 				681708371FDA972A00DBB7EB /* AudioFileWriter.m */,
 				6817082C1FDA972800DBB7EB /* BufferedOverlapQueue.h */,
 				6817082B1FDA972800DBB7EB /* BufferedOverlapQueue.m */,
+				D9D22C831FDACA0700A74850 /* dragon.caf */,
 				6817082F1FDA972800DBB7EB /* CircularBuffer.h */,
 				6817083B1FDA972B00DBB7EB /* CircularBuffer.m */,
 				6817082A1FDA972800DBB7EB /* CubicSpline.h */,
@@ -216,7 +218,6 @@
 				681708391FDA972A00DBB7EB /* PeakFinder.m */,
 				FB1417AC1FD8A82B00B41E39 /* DPTimePicker.swift */,
 				FB1417AF1FD8A82B00B41E39 /* DPTimePicker.xib */,
-				02DBACDF1FDAAB3B0086B7E5 /* dragon.caf */,
 				68F6EA5C1FDA8E350040FC92 /* BrightnessViewController.h */,
 				68F6EA5D1FDA8E350040FC92 /* BrightnessViewController.m */,
 				FB1417AE1FD8A82B00B41E39 /* EZYGradientView.swift */,
@@ -334,7 +335,7 @@
 				TargetAttributes = {
 					B62ED39E1D7F299D00B503DF = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6FLLWS37PJ;
+						DevelopmentTeam = 49M97733LM;
 						LastSwiftMigration = 0910;
 					};
 					B62ED3B21D7F299D00B503DF = {
@@ -374,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D22C841FDACA1200A74850 /* dragon.caf in Resources */,
 				FB1417B41FD8AC0600B41E39 /* DPTimeCollectionViewCell.xib in Resources */,
 				B62ED3AD1D7F299D00B503DF /* LaunchScreen.storyboard in Resources */,
 				B62ED3AA1D7F299D00B503DF /* Assets.xcassets in Resources */,
@@ -647,7 +649,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 6FLLWS37PJ;
+				DEVELOPMENT_TEAM = 49M97733LM;
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -667,7 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 6FLLWS37PJ;
+				DEVELOPMENT_TEAM = 49M97733LM;
 				INFOPLIST_FILE = Commotion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

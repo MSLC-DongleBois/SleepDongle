@@ -20,12 +20,13 @@
 @property (strong, nonatomic) CircularBuffer *buffer;
 @property (strong, nonatomic) FFTHelper *fftHelper;
 @property (nonatomic) float frequency;
+@property (nonatomic) bool alarmToggle;
 @end
 
 @implementation BrightnessViewController
 
 int numTaps = 0;
-int alarmToggle = false;
+int coolDown = 0;
 
 #pragma mark Lazy Instantiation
 -(Novocaine*)audioManager
@@ -56,10 +57,21 @@ int alarmToggle = false;
     return _fftHelper;
 }
 
+-(bool) alarmToggle
+{
+    if(!_alarmToggle)
+    {
+        _alarmToggle = false;
+    }
+    
+    return _alarmToggle;
+}
+
 
 - (void)initialize {
     NSLog(@"Beginning to load brightness controls...");
     __block BrightnessViewController * __weak  weakSelf = self;
+    self.alarmToggle = false;
     [self.audioManager setInputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
      {
          if(numChannels > 1) {
@@ -96,12 +108,18 @@ int alarmToggle = false;
                                     repeats:YES];
 }
 
+-(bool) getAlarmToggle
+{
+    return self.alarmToggle;
+}
+
 -(void) continuousFFT: (NSTimer*) t
 {
     [self getNewFFT];
 }
 
 - (void) playAudio {
+    NSLog(@"We heeere!");
     __block BrightnessViewController * __weak  weakSelf = self;
     [self.audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
      {
@@ -122,6 +140,7 @@ int alarmToggle = false;
 }
 
 - (void) getNewFFT{
+    
     // just plot the audio stream
     
     // get audio stream data
@@ -171,18 +190,25 @@ int alarmToggle = false;
     }
     
     // Motion towards
-    else if (leftMagnitude < rightMagnitude)
+    else if (leftMagnitude < rightMagnitude && coolDown == 0)
     {
 //        [[UIScreen mainScreen] setBrightness:1];
 //        self.emojiLabel.text = @"🐵";
 //        self.peekabooLabel.text = @"Peekaboo!";
         numTaps += 1;
         
+        NSLog(@"registered one tap");
+        
+        coolDown = 3;
+        
         if (numTaps >= 8) {
-            alarmToggle = true;
+            self.alarmToggle = true;
+            NSLog(@"We done!");
         }
         
     }
+    
+    if (coolDown > 0) coolDown--;
     
     // Free up the data
     free(arrayData);

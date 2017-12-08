@@ -21,6 +21,7 @@ class SleepyBoye: NSObject {
         var lightSleepPercentage: Double!
         var awakePercentage: Double!
         var sleepScore: Int!
+        var lengthOfSleep: DateInterval!
         
         for event in data.motionEvents {
             if event < 5 {
@@ -35,6 +36,9 @@ class SleepyBoye: NSObject {
             
             numBuckets = numBuckets + 1
         }
+        
+        lengthOfSleep = DateInterval(start: data.eventStart, end: data.eventEnd)
+        data.lengthOfSleep = lengthOfSleep
         
         deepSleepPercentage = Double(deepSleep) / Double(numBuckets)
         lightSleepPercentage = Double(lightSleep) / Double(numBuckets)

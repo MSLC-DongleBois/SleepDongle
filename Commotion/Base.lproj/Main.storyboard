@@ -96,7 +96,7 @@
             <objects>
                 <tableViewController id="CVx-JE-bxH" customClass="HistoryTableViewController" customModule="Commotion" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" id="IzF-Xv-7I4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -401,7 +401,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="snE-Da-KPt">
-                                <rect key="frame" x="0.0" y="328" width="375" height="450"/>
+                                <rect key="frame" x="0.0" y="355" width="375" height="423"/>
                                 <connections>
                                     <segue destination="CVx-JE-bxH" kind="embed" id="9fI-TW-i2A"/>
                                 </connections>
@@ -412,7 +412,7 @@
                             <constraint firstItem="snE-Da-KPt" firstAttribute="leading" secondItem="pFC-0q-K5K" secondAttribute="leadingMargin" constant="-16" id="4n1-xx-ZaQ"/>
                             <constraint firstItem="23i-DR-G4F" firstAttribute="centerX" secondItem="pFC-0q-K5K" secondAttribute="centerX" id="7Em-8P-J2W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="snE-Da-KPt" secondAttribute="trailing" constant="-16" id="H2b-M1-Fc5"/>
-                            <constraint firstItem="snE-Da-KPt" firstAttribute="top" secondItem="23i-DR-G4F" secondAttribute="bottom" constant="-450" id="PQp-tL-KRr"/>
+                            <constraint firstItem="snE-Da-KPt" firstAttribute="top" secondItem="23i-DR-G4F" secondAttribute="bottom" constant="-423" id="PQp-tL-KRr"/>
                             <constraint firstItem="23i-DR-G4F" firstAttribute="leading" secondItem="pFC-0q-K5K" secondAttribute="leading" id="UpI-AU-oVA"/>
                             <constraint firstItem="Swc-jp-RD0" firstAttribute="top" secondItem="23i-DR-G4F" secondAttribute="bottom" id="Va8-SY-Gbe"/>
                             <constraint firstItem="Swc-jp-RD0" firstAttribute="top" secondItem="snE-Da-KPt" secondAttribute="bottom" id="dGv-6G-pzx"/>
@@ -422,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovr-N0-lzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317.5999999999999" y="1027.736131934033"/>
+            <point key="canvasLocation" x="1317.5999999999999" y="1027.0935960591135"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="FCA-sg-LE2">
@@ -451,7 +451,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWu-TZ-bCX" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="64.333333333333343" width="343" height="300.66666666666663"/>
+                                <rect key="frame" x="16" y="64" width="343" height="285"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -459,7 +459,7 @@
                         <constraints>
                             <constraint firstItem="RBt-s2-xJy" firstAttribute="trailing" secondItem="ceV-Ol-pfa" secondAttribute="trailingMargin" id="DNk-8O-4Zi"/>
                             <constraint firstItem="RBt-s2-xJy" firstAttribute="leading" secondItem="ceV-Ol-pfa" secondAttribute="leadingMargin" id="ODE-GP-Nha"/>
-                            <constraint firstItem="AP0-sY-ET0" firstAttribute="top" secondItem="KWu-TZ-bCX" secondAttribute="bottom" constant="413" id="OI2-7M-9cZ"/>
+                            <constraint firstItem="AP0-sY-ET0" firstAttribute="top" secondItem="KWu-TZ-bCX" secondAttribute="bottom" constant="429" id="OI2-7M-9cZ"/>
                             <constraint firstItem="RBt-s2-xJy" firstAttribute="trailing" secondItem="KWu-TZ-bCX" secondAttribute="trailing" id="cXW-Vc-mqy"/>
                             <constraint firstItem="RBt-s2-xJy" firstAttribute="leading" secondItem="KWu-TZ-bCX" secondAttribute="leading" id="rml-Yf-EmH"/>
                             <constraint firstItem="RBt-s2-xJy" firstAttribute="top" secondItem="ceV-Ol-pfa" secondAttribute="topMargin" id="t17-eB-liK"/>

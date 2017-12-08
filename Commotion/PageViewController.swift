@@ -25,20 +25,20 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         // Load data
         arrPageTitle = ["Sleep Duration", "Sleep Score"];
         xValues = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-        yValues = [7.0, 7.2, 6.0, 5.1, 7.2, 9.5, 8.2, 69, 14, 88, 43, 97, 32, 8]
         
         let night = NightWatchman()
         let nights = night.loadNights()
         let mostRecentNight = night.getLatestNight()
         let lastWeekday = getWeekdayFrom(date: mostRecentNight.eventStart)
         let xValueIndex = xValues.index(of: lastWeekday)
-        newXVals = Array(xValues[(xValueIndex! + 1) ..< (xValueIndex! + 8)])
         let sortedNights = nights?.sorted { $0.eventStart < $1.eventStart }
         var lastSevenNights = [NightyNight]()
         if((sortedNights?.count)! > 6) {
             lastSevenNights = Array(sortedNights![((sortedNights?.count)! - 7) ..< (sortedNights?.count)!])
+            newXVals = Array(xValues[(xValueIndex! + 1) ..< (xValueIndex! + 8)])
         } else {
             lastSevenNights = Array(sortedNights![0 ..< (sortedNights?.count)!])
+            newXVals = Array(xValues[(xValueIndex! + 8 - (sortedNights?.count)!) ..< (xValueIndex! + 8)])
         }
         yValScores = getScoresFrom(nights: lastSevenNights)
         yValLengths = getLengthsFrom(nights: lastSevenNights)
@@ -122,7 +122,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         var scores: [Double] = [Double]()
         for night in nights {
             let seconds = night.lengthOfSleep.duration
-            print("Seconds: \(seconds)")
             let hours = Double(seconds) / 3600.0
             scores.append(hours)
         }

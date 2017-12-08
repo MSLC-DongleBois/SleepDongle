@@ -92,6 +92,8 @@ class PageContentViewController: UIViewController {
         barryBoi.xAxis.drawLabelsEnabled = true
         barryBoi.xAxis.labelFont = .boldSystemFont(ofSize: 13)
         
+        barryBoi.xAxis.granularityEnabled = true
+        barryBoi.xAxis.granularity = 1
         
         self.barryBoi.rightAxis.addLimitLine(averageLine)
         self.barryBoi.animate(yAxisDuration: 0.5, easingOption: .easeInSine)

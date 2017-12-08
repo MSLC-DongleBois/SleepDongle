@@ -22,6 +22,9 @@ class TrackingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UNUserNotificationCenter.current().delegate = self
+        //dopplerBoi.initialize()
+        
         var seconds: Double = 0.0
         if let k = alarmTime {
             seconds = handleTime(date: k)
@@ -92,6 +95,10 @@ class TrackingViewController: UIViewController {
         }
     }
     
+    
+    
+    
+    
     func notify(inSeconds: TimeInterval, completion: @escaping (Bool) -> ()) {
         // create notification content
         let content = UNMutableNotificationContent()
@@ -146,4 +153,15 @@ class TrackingViewController: UIViewController {
         
     }
 
+}
+
+
+extension TrackingViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+        dopplerBoi.initialize()
+        dopplerBoi.playAudio()
+        dopplerBoi.start()
+        print("QQQQQQQQQQQQQQQQQ")
+    }
 }

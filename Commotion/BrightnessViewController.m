@@ -26,6 +26,7 @@
 
 int numTaps = 0;
 int alarmToggle = false;
+int coolDown = 0;
 
 #pragma mark Lazy Instantiation
 -(Novocaine*)audioManager
@@ -102,6 +103,7 @@ int alarmToggle = false;
 }
 
 - (void) playAudio {
+    NSLog(@"We heeere!");
     __block BrightnessViewController * __weak  weakSelf = self;
     [self.audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
      {
@@ -122,6 +124,7 @@ int alarmToggle = false;
 }
 
 - (void) getNewFFT{
+    
     // just plot the audio stream
     
     // get audio stream data
@@ -171,18 +174,25 @@ int alarmToggle = false;
     }
     
     // Motion towards
-    else if (leftMagnitude < rightMagnitude)
+    else if (leftMagnitude < rightMagnitude && coolDown == 0)
     {
 //        [[UIScreen mainScreen] setBrightness:1];
 //        self.emojiLabel.text = @"🐵";
 //        self.peekabooLabel.text = @"Peekaboo!";
         numTaps += 1;
         
+        NSLog(@"registered one tap");
+        
+        coolDown = 3;
+        
         if (numTaps >= 8) {
             alarmToggle = true;
+            NSLog(@"We done!");
         }
         
     }
+    
+    if (coolDown > 0) coolDown--;
     
     // Free up the data
     free(arrayData);

@@ -15,6 +15,7 @@
 
 -(void)initialize;
 -(void)start;
+-(void)playAudio;
 
 @end
 #endif /* BrightnessViewController */

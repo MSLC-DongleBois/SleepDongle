@@ -90,10 +90,10 @@ class TrackingViewController: UIViewController {
     func notify(inSeconds: TimeInterval, completion: @escaping (Bool) -> ()) {
         // create notification content
         let content = UNMutableNotificationContent()
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.init(named: "dragon.caf")
         content.title = "ALARM"
         content.body = "Rise and shine! It's morning time!"
-        print("inSeconds:",inSeconds)
+        print("inSeconds:", inSeconds)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
         if let alarm = alarmTime {
             print(alarm)

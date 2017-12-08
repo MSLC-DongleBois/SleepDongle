@@ -38,7 +38,7 @@ class SleepyBoye: NSObject {
         
         deepSleepPercentage = Double(deepSleep) / Double(numBuckets)
         lightSleepPercentage = Double(lightSleep) / Double(numBuckets)
-        awakePercentage = Double(awakePercentage) / Double(numBuckets)
+        awakePercentage = Double(awake) / Double(numBuckets)
         
         data.deepSleepPercentage = deepSleepPercentage
         data.lightSleepPercentage = lightSleepPercentage

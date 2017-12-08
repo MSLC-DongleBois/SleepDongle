@@ -149,7 +149,11 @@ class HistoryTableViewController: UITableViewController {
         night.nights.append(temp)
         temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 97, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
         night.nights.append(temp)
-        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [1, 2, 3], length: DateInterval(), score: 81, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
+        
+        
+        temp = NightyNight(start: Date(), end: Date(), alarm: Date(), events: [9,9,8,9,0,8,9,8,7,5,5,5,4,3,5,4,3,4,5,6,4,3,2,2,1,2,3,2,1,1,1,2,1,2,2,1,2,1,2,1,2,3,4,1,1,1,2,3,3,7,6,5,4,3,2,3,2,4,5,7,8,9,0,0,0,9,8,7,6,6,5,4,5,6,7,8,6,5,5,7,7,8], length: DateInterval(), score: 97, deepPer: 69.69, lightPer: 69.69, awakePer: 69.69, classification: 3)
+        
+        temp = SleepyBoye.analyzeNight(data: temp)
         night.nights.append(temp)
         
         night.saveNights()

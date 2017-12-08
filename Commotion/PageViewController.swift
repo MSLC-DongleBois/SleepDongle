@@ -20,9 +20,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         // Do any additional setup after loading the view.
         
         // Load data
-        arrPageTitle = ["This week", "Last week", "2 weeks ago"];
+        arrPageTitle = ["Sleep Duration", "Sleep Score"];
         xValues = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-        yValues = [7.0, 7.2, 6.0, 5.1, 7.2, 9.5, 8.2, 5.1, 7.2, 9.5, 8.2, 7.2, 6.0, 5.1, 8.2, 5.1, 7.2, 7.2, 9.5, 8.2, 5.1]
+        yValues = [7.0, 7.2, 6.0, 5.1, 7.2, 9.5, 8.2, 69, 14, 88, 43, 97, 32, 8]
         
         self.dataSource = self
         self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)

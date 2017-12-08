@@ -37,6 +37,15 @@ class NightWatchman
             nights = [NightyNight]()
         }
         return nights
-
+    }
+    
+    func getLatestNight() -> NightyNight {
+        var mostRecentIndex: Int = -1
+        let mostRecentDate: Date = nights.map { $0.eventStart }.max()!
+        if let i = nights.index(where: { $0.eventStart == mostRecentDate }) {
+            mostRecentIndex = i
+            print("Most recent night: \(nights[i])")
+        }
+        return nights[mostRecentIndex]
     }
 }

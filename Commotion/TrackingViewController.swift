@@ -126,32 +126,54 @@ class TrackingViewController: UIViewController {
 //                              8, 8, 5, 6, 7, 4, 3, 15, 2.0, 4.0, 5.0, 4.0,
 //                              0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4]
         
-//        let startSleep = 23;
-//        let endSleep = 8;
+        var startSleep = 1;
 //
 //        // Format label strings
 //
 //
 //
-//        var tempString = "";
-//        var hours: [String] = [];
-//        var currCount = 0;
-//
-//        for i in 0 ..< sleepMovements.count {
-//            hours.append
-//        }
+        var tempString = "";
+        var hours: [String] = [];
+        var currCount = 0;
+
+        for i in 0 ..< sleepMovements.count {
+            if (currCount % 12 == 0) {
+                if (startSleep == 12) {
+                    tempString = String(startSleep) + "pm"
+                }
+                    
+                else if (startSleep >= 13) {
+                    tempString = String(startSleep - 12) + "pm"
+                } else {
+                    tempString = String(startSleep) + "am"
+                }
+                
+                hours.append(tempString)
+                startSleep += 1
+                
+                if (startSleep =    )
+                print(tempString)
+            } else {
+                hours.append("")
+                print(currCount)
+            }
+            
+            currCount += 1
+        }
+        
+        print(hours)
         
         
         
         //let hours = ["12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am"]
-        let hours = ["12am", "", "", "", "", "", "", "", "", "", "", "",
-                              "1am", "", "", "", "", "", "", "", "", "", "", "",
-                              "2am", "", "", "", "", "", "", "", "", "", "", "",
-                              "3am", "", "", "", "", "", "", "", "", "", "", "",
-                              "4am", "", "", "", "", "", "", "", "", "", "", "",
-                              "5am", "", "", "", "", "", "", "", "", "", "", "",
-                              "6am", "", "", "", "", "", "", "", "", "", "", "",
-                              "7am", "", "", "", "", "", "", "", "", "", "", ""]
+//        let hours = ["12am", "", "", "", "", "", "", "", "", "", "", "",
+//                              "1am", "", "", "", "", "", "", "", "", "", "", "",
+//                              "2am", "", "", "", "", "", "", "", "", "", "", "",
+//                              "3am", "", "", "", "", "", "", "", "", "", "", "",
+//                              "4am", "", "", "", "", "", "", "", "", "", "", "",
+//                              "5am", "", "", "", "", "", "", "", "", "", "", "",
+//                              "6am", "", "", "", "", "", "", "", "", "", "", "",
+//                              "7am", "", "", "", "", "", "", "", "", "", "", ""]
         
         // Creating an array of data entries
         var graphValues: [ChartDataEntry] = []

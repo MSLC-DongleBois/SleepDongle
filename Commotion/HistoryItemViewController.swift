@@ -13,7 +13,9 @@ class HistoryItemViewController: UIViewController {
 
     @IBOutlet weak var chartyBoi: LineChartView!
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var totalLengthLabel: UILabel!
+    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var userClassificationSegmentedControl: UISegmentedControl!
     /*
      This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
@@ -24,26 +26,21 @@ class HistoryItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set dummy data
-//        let sleepMovements = [20, 15, 10, 10, 9, 11, 7, 9, 14, 11, 6, 10,
-//                              10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8,
-//                              8, 8, 5, 6, 7, 4, 3, 15, 2, 4, 5, 4,
-//                              0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4,
-//                              6, 7, 8, 9, 10, 11, 10, 10, 9, 9, 10, 12,
-//                              13, 14, 16, 18, 20, 19, 20, 10, 4, 4, 3, 4,
-//                              10, 9, 9, 10, 10, 12, 11, 11, 11, 9, 8, 9,
-//                              11, 12, 14, 13, 14, 14, 11, 10, 10, 12, 13, 15]
         let sleepMovements = cellData?.motionEvents
-        let startHour = Calendar.current.component(.hour, from: (cellData?.eventStart)!);
-        
+        let startHour = Calendar.current.component(.hour, from: (cellData?.eventStart)!)
         drawNightlyGraph(sleepMovements: sleepMovements!, startHour: startHour)
-
-        // Do any additional setup after loading the view.
         
-        // Set up views if editing an existing Meal.
         if let cellData = cellData {
-            scoreLabel.text = String(cellData.sleepScore)
-            dateLabel.text = convertDateToString(date: cellData.eventStart)
+            let sleepScore = cellData.sleepScore!
+            scoreLabel.text = String(sleepScore)
+            let hue: CGFloat = CGFloat(Double(sleepScore) * 120.0 / 100.0)
+            print("Hue: \(hue)")
+            scoreLabel.textColor = UIColor(hue: hue, saturation: 1.0, brightness: 0.75, alpha: 1.0)
+            let lengthOfSleep: DateInterval = DateInterval(start: cellData.eventStart, end: cellData.eventEnd)
+            totalLengthLabel.text = stringFromTimeInterval(interval: lengthOfSleep.duration)
+            startLabel.text = timeStringFromDate(date: cellData.eventStart)
+            endLabel.text = timeStringFromDate(date: cellData.eventEnd)
+            self.title = convertDateToString(date: cellData.eventStart)
             if let userClassification = cellData.userClassification {
                 userClassificationSegmentedControl.selectedSegmentIndex = userClassification
             } else {
@@ -105,23 +102,7 @@ class HistoryItemViewController: UIViewController {
             currCount += 1
         }
         
-//        let placeholder = hours[0]
-//        hours[0] = hours[1]
-//        hours[1] = placeholder
-        
         print(hours)
-        
-        
-        
-        //let hours = ["12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am"]
-        //        let hours = ["12am", "", "", "", "", "", "", "", "", "", "", "",
-        //                              "1am", "", "", "", "", "", "", "", "", "", "", "",
-        //                              "2am", "", "", "", "", "", "", "", "", "", "", "",
-        //                              "3am", "", "", "", "", "", "", "", "", "", "", "",
-        //                              "4am", "", "", "", "", "", "", "", "", "", "", "",
-        //                              "5am", "", "", "", "", "", "", "", "", "", "", "",
-        //                              "6am", "", "", "", "", "", "", "", "", "", "", "",
-        //                              "7am", "", "", "", "", "", "", "", "", "", "", ""]
         
         // Creating an array of data entries
         var graphValues: [ChartDataEntry] = []
@@ -130,7 +111,6 @@ class HistoryItemViewController: UIViewController {
             let dataEntry = ChartDataEntry(x: Double(i + 1), y: Double(sleepMovements[i]))
             graphValues.append(dataEntry)
         }
-        
         
         let ds = LineChartDataSet(values: graphValues, label: "Months")
         let data = LineChartData(dataSet: ds)
@@ -200,6 +180,22 @@ class HistoryItemViewController: UIViewController {
         dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMM dd, YYYY") // set template after setting locale
         return dateFormatter.string(from: date) // December 31, 2017
+    }
+    
+    func stringFromTimeInterval(interval: TimeInterval) -> String {
+        let ti = Int(interval)
+        
+        let minutes = (ti / 60) % 60
+        let hours = (ti / 3600)
+        
+        return String(format: "%0.2dhr %0.2dmin", hours, minutes)
+    }
+    
+    func timeStringFromDate(date: Date) -> String {
+        let minutes = Calendar.current.component(.minute, from: date)
+        let hours = Calendar.current.component(.hour, from: date)
+        
+        return String(format: "%0.2dhr %0.2dmin", hours, minutes)
     }
 
 }

@@ -11,6 +11,7 @@ import UIKit
 class TrackingViewController: UIViewController {
     
     let currentBrightness = UIScreen.main.brightness
+    var alarmTime: Date = Date()
 
     var drPhill = DoctorPhill()
     let cmManager = CoreMotionManager()
@@ -20,6 +21,8 @@ class TrackingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Alarm time: \(alarmTime)")
       
         UIApplication.shared.isIdleTimerDisabled = true
         UIApplication.shared.isStatusBarHidden = false
@@ -85,11 +88,5 @@ class TrackingViewController: UIViewController {
         UIApplication.shared.isStatusBarHidden = false
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-  
 
 }

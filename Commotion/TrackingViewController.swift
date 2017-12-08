@@ -20,16 +20,20 @@ class TrackingViewController: UIViewController {
     let notificationIdentifier = "myNotification"
     
     override func viewDidLoad() {
-        let seconds = handleTime(date: alarmTime!)
         super.viewDidLoad()
-        let duration = seconds
-        self.notify(inSeconds: duration, completion: { success in
-            if success {
-                print("successful scheduling")
-            } else {
-                print("error scheduling")
-            }
-        })
+        var seconds: Double = 0.0
+        if let k = alarmTime {
+            seconds = handleTime(date: k)
+            print("SECONDS", seconds)
+            let duration = seconds
+            self.notify(inSeconds: duration, completion: { success in
+                if success {
+                    print("successful scheduling")
+                } else {
+                    print("error scheduling")
+                }
+            })
+        }
         UIApplication.shared.isIdleTimerDisabled = true
         UIApplication.shared.isStatusBarHidden = false
         NotificationCenter.default.addObserver(self, selector: #selector(deviceChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)

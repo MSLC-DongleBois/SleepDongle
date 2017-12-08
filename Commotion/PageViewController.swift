@@ -26,6 +26,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         self.dataSource = self
         self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        
+        self.view.backgroundColor = UIColor.black
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
@@ -67,6 +69,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return pageContentViewController
     }
     
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        setupPageControl()
+        return self.arrPageTitle.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -76,5 +87,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func setupPageControl() {
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = UIColor.gray
+        appearance.currentPageIndicatorTintColor = UIColor.white
+        appearance.backgroundColor = UIColor.darkGray
+    }
 
 }

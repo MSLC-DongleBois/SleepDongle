@@ -38,7 +38,6 @@ class TrackingViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = true
         UIApplication.shared.isStatusBarHidden = false
         NotificationCenter.default.addObserver(self, selector: #selector(deviceChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        //self.view.backgroundColor = UIColor.clear
         
 //        self.screenOff.isHidden = true
 //        self.screenOff.layer.zPosition = 1;
@@ -46,6 +45,8 @@ class TrackingViewController: UIViewController {
         drPhill.createNight(start: Date(), alarm: Date())
         cmManager.startReceivingAccelUpdates(interval: 0.1, completion:drPhill.HandleMotion)
         print("Started motion tracking")
+        
+        self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .done, target: self, action: "donePressed"), animated: true)
         
     }
     
@@ -57,6 +58,21 @@ class TrackingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.isStatusBarHidden = false
 //        self.screenOff.isHidden = true
+    }
+    
+    @objc func donePressed()
+    {
+        let temp = NightWatchman.init()
+        temp.loadNights()
+        
+        var tempnight = drPhill.EndSession(end: Date())
+        
+        tempnight = SleepyBoye.analyzeNight(data: tempnight)
+        
+        temp.nights.append(tempnight)
+        temp.saveNights()
+        navigationController?.popViewController(animated: true)
+        
     }
     
     @objc func deviceChange() {

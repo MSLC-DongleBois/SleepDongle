@@ -59,6 +59,11 @@ class SleepyBoye: NSObject {
         
         data.sleepScore = sleepScore
         
+        if (data.userClassification == nil)
+        {
+            data.userClassification = 1
+        }
+        
         return data
         
     }

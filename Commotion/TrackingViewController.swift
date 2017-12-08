@@ -11,12 +11,10 @@ import UIKit
 class TrackingViewController: UIViewController {
     
     let currentBrightness = UIScreen.main.brightness
-    var alarmTime: Date = Date()
+    var alarmTime: Date? = nil
 
     var drPhill = DoctorPhill()
     let cmManager = CoreMotionManager()
-    
-    @IBOutlet weak var screenOff: UIView!
     
     
     override func viewDidLoad() {
@@ -29,8 +27,8 @@ class TrackingViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(deviceChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         //self.view.backgroundColor = UIColor.clear
         
-        self.screenOff.isHidden = true
-        self.screenOff.layer.zPosition = 1;
+//        self.screenOff.isHidden = true
+//        self.screenOff.layer.zPosition = 1;
       
         drPhill.createNight(start: Date(), alarm: Date())
         cmManager.startReceivingAccelUpdates(interval: 0.1, completion:drPhill.HandleMotion)
@@ -40,50 +38,50 @@ class TrackingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.isStatusBarHidden = false
-        self.screenOff.isHidden = true
+//        self.screenOff.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         UIApplication.shared.isStatusBarHidden = false
-        self.screenOff.isHidden = true
+//        self.screenOff.isHidden = true
     }
     
     @objc func deviceChange() {
         switch UIDevice.current.orientation {
         case .faceDown:
             UIScreen.main.brightness = CGFloat(0.0)
-            self.screenOff.isHidden = false
+//            self.screenOff.isHidden = false
             UIApplication.shared.isStatusBarHidden = true
         case .faceUp:
             UIScreen.main.brightness = currentBrightness
-            self.screenOff.isHidden = true
+//            self.screenOff.isHidden = true
             UIApplication.shared.isStatusBarHidden = false
         case .unknown:
             UIScreen.main.brightness = CGFloat(0.0)
-            self.screenOff.isHidden = false
+//            self.screenOff.isHidden = false
             UIApplication.shared.isStatusBarHidden = true
         case .landscapeLeft:
             UIScreen.main.brightness = currentBrightness
-            self.screenOff.isHidden = true
+//            self.screenOff.isHidden = true
             UIApplication.shared.isStatusBarHidden = false
         case .landscapeRight:
             UIScreen.main.brightness = currentBrightness
-            self.screenOff.isHidden = true
+//            self.screenOff.isHidden = true
             UIApplication.shared.isStatusBarHidden = false
         case .portrait:
             UIScreen.main.brightness = currentBrightness
-            self.screenOff.isHidden = true
+//            self.screenOff.isHidden = true
             UIApplication.shared.isStatusBarHidden = false
         case .portraitUpsideDown:
             UIScreen.main.brightness = currentBrightness
-            self.screenOff.isHidden = true
+//            self.screenOff.isHidden = true
             UIApplication.shared.isStatusBarHidden = false
         }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.screenOff.isHidden = true
+//        self.screenOff.isHidden = true
         UIApplication.shared.isIdleTimerDisabled = false
         UIApplication.shared.isStatusBarHidden = false
         

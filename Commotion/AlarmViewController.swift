@@ -15,8 +15,10 @@ extension AlarmViewController: DPTimePickerDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         alarmTime = formatter.date(from: "\(hour):\(minute)")!
-//        alarmTime = formatter.stringFromDate(time)
-        setAlarmTime(hour: hour, minute: minute)
+        
+        var trackingVC = TrackingViewController()
+        trackingVC.alarmTime = alarmTime
+        self.navigationController?.pushViewController(trackingVC, animated: true)
     }
     
     func timePickerDidClose(_ timePicker: DPTimePicker) {
@@ -40,7 +42,7 @@ class AlarmViewController: UIViewController {
         timePicker.closeButton.setTitleColor(accentColor, for: .normal)
         timePicker.closeButton.setTitle("Cancel", for: .normal)
         timePicker.okButton.setTitleColor(accentColor, for: .normal)
-        timePicker.okButton.setTitle("Set", for: .normal)
+        timePicker.okButton.setTitle("Start", for: .normal)
         timePicker.backgroundColor = mainColor
         timePicker.numbersColor = accentColor
         timePicker.linesColor = accentColor

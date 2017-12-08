@@ -21,23 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTj-pQ-Nsw">
-                                <rect key="frame" x="98" y="379" width="179" height="54"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="2NH-x8-cfL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
-                                <state key="normal" title="Start Tracking">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="startTrackingClicked:" destination="BMW-tc-JK7" eventType="touchUpInside" id="eSF-yV-TW1"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sleep Dongle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-2s-uFO">
+                                <rect key="frame" x="16" y="298" width="343" height="59"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwx-6A-Kj1">
-                                <rect key="frame" x="16" y="169" width="343" height="59"/>
+                                <rect key="frame" x="16" y="234" width="343" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="GrY-DR-Jws"/>
                                 </constraints>
@@ -48,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jg-EG-YHW">
-                                <rect key="frame" x="98" y="523" width="179" height="59"/>
+                                <rect key="frame" x="98" y="528" width="179" height="59"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
@@ -59,12 +50,21 @@
                                     <segue destination="Uip-1M-ddy" kind="show" id="i0b-3G-Ye5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sleep Dongle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-2s-uFO">
-                                <rect key="frame" x="16" y="233" width="343" height="59"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTj-pQ-Nsw">
+                                <rect key="frame" x="98" y="391" width="179" height="59"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="2NH-x8-cfL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
+                                <state key="normal" title="Start Tracking">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTrackingClicked:" destination="BMW-tc-JK7" eventType="touchUpInside" id="eSF-yV-TW1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -75,10 +75,10 @@
                             <constraint firstItem="eOi-2s-uFO" firstAttribute="centerX" secondItem="Moe-q0-ZNc" secondAttribute="centerX" id="S58-qR-YeG"/>
                             <constraint firstItem="Nwx-6A-Kj1" firstAttribute="leading" secondItem="Moe-q0-ZNc" secondAttribute="leadingMargin" id="WCp-JE-YYf"/>
                             <constraint firstItem="Nwx-6A-Kj1" firstAttribute="trailing" secondItem="Moe-q0-ZNc" secondAttribute="trailingMargin" id="aZm-8j-Fvg"/>
-                            <constraint firstItem="0Jg-EG-YHW" firstAttribute="top" secondItem="XTj-pQ-Nsw" secondAttribute="bottom" constant="90" id="eqy-tK-mw5"/>
+                            <constraint firstItem="0Jg-EG-YHW" firstAttribute="top" secondItem="XTj-pQ-Nsw" secondAttribute="bottom" constant="78" id="eqy-tK-mw5"/>
                             <constraint firstItem="Nwx-6A-Kj1" firstAttribute="centerX" secondItem="0Jg-EG-YHW" secondAttribute="centerX" id="fqW-F6-Lgc"/>
-                            <constraint firstItem="XTj-pQ-Nsw" firstAttribute="centerY" secondItem="Moe-q0-ZNc" secondAttribute="centerY" id="rml-n0-och"/>
-                            <constraint firstItem="Nwx-6A-Kj1" firstAttribute="top" secondItem="8Hk-L2-vCS" secondAttribute="bottom" constant="29" id="tCP-Ig-mJk"/>
+                            <constraint firstItem="XTj-pQ-Nsw" firstAttribute="centerY" secondItem="Moe-q0-ZNc" secondAttribute="centerY" constant="14.5" id="rml-n0-och"/>
+                            <constraint firstItem="Nwx-6A-Kj1" firstAttribute="top" secondItem="8Hk-L2-vCS" secondAttribute="bottom" constant="94" id="tCP-Ig-mJk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="34S-cA-rMf"/>

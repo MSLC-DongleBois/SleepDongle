@@ -20,12 +20,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         // Do any additional setup after loading the view.
         
         // Load data
-        arrPageTitle = ["This week", "Last week", "2 weeks ago"];
+        arrPageTitle = ["Sleep Duration", "Sleep Score"];
         xValues = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-        yValues = [7.0, 7.2, 6.0, 5.1, 7.2, 9.5, 8.2, 5.1, 7.2, 9.5, 8.2, 7.2, 6.0, 5.1, 8.2, 5.1, 7.2, 7.2, 9.5, 8.2, 5.1]
+        yValues = [7.0, 7.2, 6.0, 5.1, 7.2, 9.5, 8.2, 69, 14, 88, 43, 97, 32, 8]
         
         self.dataSource = self
         self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        
+        self.view.backgroundColor = UIColor.black
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
@@ -67,6 +69,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return pageContentViewController
     }
     
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        setupPageControl()
+        return self.arrPageTitle.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -76,5 +87,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func setupPageControl() {
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = UIColor.gray
+        appearance.currentPageIndicatorTintColor = UIColor.white
+        appearance.backgroundColor = UIColor.darkGray
+    }
 
 }

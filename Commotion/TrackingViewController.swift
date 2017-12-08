@@ -123,10 +123,9 @@ class TrackingViewController: UIViewController {
         
 //        let sleepMovements = [20.0, 15.0, 10.0, 10.0, 9.0, 11.0, 7.0, 9.0, 14.0, 11.0, 6.0, 10,
 //                              10, 10, 10, 10, 10, 12, 8, 11, 9, 7, 6, 8,
-//                              8, 8, 5, 6, 7, 4, 3, 15, 2.0, 4.0, 5.0, 4.0,
-//                              0, 0, 1, 0, 2, 3, 2, 0, 4, 0, 1, 4]
+//                              8]
         
-        var startSleep = 1;
+        var startSleep = 3;
 //
 //        // Format label strings
 //
@@ -139,10 +138,10 @@ class TrackingViewController: UIViewController {
         for i in 0 ..< sleepMovements.count {
             if (currCount % 12 == 0) {
                 if (startSleep == 12) {
-                    tempString = String(startSleep) + "pm"
-                }
-                    
-                else if (startSleep >= 13) {
+                    tempString = "12pm"
+                } else if (startSleep == 0) {
+                    tempString = "12am"
+                } else if (startSleep >= 13) {
                     tempString = String(startSleep - 12) + "pm"
                 } else {
                     tempString = String(startSleep) + "am"
@@ -151,7 +150,9 @@ class TrackingViewController: UIViewController {
                 hours.append(tempString)
                 startSleep += 1
                 
-                if (startSleep =    )
+                if (startSleep == 24) {
+                    startSleep = 0
+                }
                 print(tempString)
             } else {
                 hours.append("")
@@ -236,6 +237,7 @@ class TrackingViewController: UIViewController {
         
         //data.addDataSet(ds)
         self.chartyBoi.data = data
+
         
 
     }

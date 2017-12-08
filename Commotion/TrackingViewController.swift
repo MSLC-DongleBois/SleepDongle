@@ -162,6 +162,5 @@ extension TrackingViewController: UNUserNotificationCenterDelegate {
         dopplerBoi.initialize()
         dopplerBoi.playAudio()
         dopplerBoi.start()
-        print("QQQQQQQQQQQQQQQQQ")
     }
 }

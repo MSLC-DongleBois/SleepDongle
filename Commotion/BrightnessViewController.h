@@ -16,6 +16,8 @@
 -(void)initialize;
 -(void)start;
 -(void)playAudio;
+-(bool)getAlarmToggle;
+
 
 @end
 #endif /* BrightnessViewController */

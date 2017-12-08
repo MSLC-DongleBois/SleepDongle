@@ -20,12 +20,12 @@
 @property (strong, nonatomic) CircularBuffer *buffer;
 @property (strong, nonatomic) FFTHelper *fftHelper;
 @property (nonatomic) float frequency;
+@property (nonatomic) bool alarmToggle;
 @end
 
 @implementation BrightnessViewController
 
 int numTaps = 0;
-int alarmToggle = false;
 int coolDown = 0;
 
 #pragma mark Lazy Instantiation
@@ -57,10 +57,21 @@ int coolDown = 0;
     return _fftHelper;
 }
 
+-(bool) alarmToggle
+{
+    if(!_alarmToggle)
+    {
+        _alarmToggle = false;
+    }
+    
+    return _alarmToggle;
+}
+
 
 - (void)initialize {
     NSLog(@"Beginning to load brightness controls...");
     __block BrightnessViewController * __weak  weakSelf = self;
+    self.alarmToggle = false;
     [self.audioManager setInputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
      {
          if(numChannels > 1) {
@@ -95,6 +106,11 @@ int coolDown = 0;
                                    selector:@selector(continuousFFT:)
                                    userInfo:nil
                                     repeats:YES];
+}
+
+-(bool) getAlarmToggle
+{
+    return self.alarmToggle;
 }
 
 -(void) continuousFFT: (NSTimer*) t
@@ -186,7 +202,7 @@ int coolDown = 0;
         coolDown = 3;
         
         if (numTaps >= 8) {
-            alarmToggle = true;
+            self.alarmToggle = true;
             NSLog(@"We done!");
         }
         

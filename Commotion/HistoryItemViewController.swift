@@ -262,7 +262,7 @@ class HistoryItemViewController: UIViewController {
         
         var returnString: String = ""
         if(hours > 12) {
-            returnString = String(format: "%0.2d:%0.2dpm", hours/2, minutes)
+            returnString = String(format: "%0.2d:%0.2dpm", hours%12, minutes)
         } else {
             returnString = String(format: "%0.2d:%0.2dam", hours, minutes)
         }

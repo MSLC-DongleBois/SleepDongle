@@ -20,15 +20,9 @@ class TrackingViewController: UIViewController {
     let notificationIdentifier = "myNotification"
     
     override func viewDidLoad() {
+        let seconds = handleTime(date: alarmTime!)
         super.viewDidLoad()
-        var dateStuff = DateComponents()
-        let calendar = Calendar.current
-        dateStuff.hour = calendar.component(.hour, from: alarmTime!)
-        dateStuff.minute = calendar.component(.minute, from: alarmTime!)
-        dateStuff.year = 2017
-        print("DATESTUFF",dateStuff)
-        let elapsed = 5
-        let duration = Double(elapsed)
+        let duration = seconds
         self.notify(inSeconds: duration, completion: { success in
             if success {
                 print("successful scheduling")
@@ -114,6 +108,29 @@ class TrackingViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    func handleTime(date: Date) -> Double {
+        let currDate = Date()
+        let calendar = Calendar.current
+        let currYear = calendar.component(.year, from: currDate)
+        let currMonth = calendar.component(.month, from: currDate)
+        let currDay = calendar.component(.day, from: currDate)
+        let currHour = calendar.component(.hour, from: currDate)
+        let currMinute = calendar.component(.minute, from: currDate)
+        let endHour = calendar.component(.hour, from: date)
+        let endMinute = calendar.component(.minute, from: date)
+        let components = DateComponents(year: 2017, month: currMonth, day: currDay, hour: endHour, minute: endMinute, second: 0)
+        let alarm = calendar.date(from: components)
+        let elapsedTime = alarm?.timeIntervalSinceNow
+        if let moonDust = elapsedTime {
+            if (moonDust < 0.0) {
+                return (moonDust * -1)
+            } else {
+                return moonDust
+            }
+        }
+        return 1.0
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
     @IBAction func startTrackingClicked(_ sender: Any) {
         // create the alert
         let alert = UIAlertController(title: "Set Morning Alarm?", message: "Would you like to wake up to an alarm?", preferredStyle: UIAlertControllerStyle.alert)

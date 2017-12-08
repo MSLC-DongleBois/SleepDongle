@@ -27,9 +27,7 @@ extension AlarmViewController: DPTimePickerDelegate {
 }
 
 class AlarmViewController: UIViewController {
-    
-    @IBOutlet weak var alarmLabel: UILabel!
-    
+
     let timePicker: DPTimePicker = DPTimePicker.timePicker()
     let mainColor = UIColor.green
     let accentColor = UIColor.black
@@ -58,10 +56,6 @@ class AlarmViewController: UIViewController {
         timePicker.initialMinute = "30"
         
         timePicker.show(nil)
-    }
-    
-    func setAlarmTime(hour: String, minute: String) {
-        alarmLabel.text = "\(hour):\(minute)"
     }
     
 }

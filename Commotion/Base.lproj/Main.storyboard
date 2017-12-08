@@ -25,7 +25,7 @@
                                 <rect key="frame" x="140" y="289" width="94" height="30"/>
                                 <state key="normal" title="Start tracking"/>
                                 <connections>
-                                    <segue destination="dhR-6u-NBg" kind="show" id="2bO-HJ-Kbc"/>
+                                    <action selector="startTrackingClicked:" destination="BMW-tc-JK7" eventType="touchUpInside" id="eSF-yV-TW1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jg-EG-YHW">
@@ -236,36 +236,8 @@
                     <view key="view" contentMode="scaleToFill" id="egw-Nx-YIm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W1-q9-gWd">
-                                <rect key="frame" x="75" y="261" width="224" height="79"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="79" id="A9w-hO-ztg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f42-Yz-eUb">
-                                <rect key="frame" x="140" y="430" width="94" height="30"/>
-                                <state key="normal" title="Start tracking"/>
-                                <connections>
-                                    <segue destination="Pd6-qV-nZA" kind="presentation" modalTransitionStyle="flipHorizontal" id="H8b-nf-llH"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="f42-Yz-eUb" firstAttribute="top" secondItem="5W1-q9-gWd" secondAttribute="bottom" constant="90" id="33k-Fc-Vwk"/>
-                            <constraint firstItem="5W1-q9-gWd" firstAttribute="top" secondItem="2oZ-Kb-Nmr" secondAttribute="bottom" constant="145" id="fjd-IW-LOi"/>
-                            <constraint firstItem="5W1-q9-gWd" firstAttribute="centerX" secondItem="egw-Nx-YIm" secondAttribute="centerX" id="pov-6O-935"/>
-                            <constraint firstItem="5W1-q9-gWd" firstAttribute="centerX" secondItem="f42-Yz-eUb" secondAttribute="centerX" id="wSk-hO-7d9"/>
-                            <constraint firstItem="5W1-q9-gWd" firstAttribute="leading" secondItem="egw-Nx-YIm" secondAttribute="leadingMargin" constant="59" id="zXx-lC-1gk"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="alarmLabel" destination="5W1-q9-gWd" id="exw-3g-fGg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzo-Yv-4jC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

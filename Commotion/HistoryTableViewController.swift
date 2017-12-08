@@ -138,10 +138,7 @@ class HistoryTableViewController: UITableViewController {
     private func loadNights() {
         let night = NightWatchman()
         night.loadNights()
-        for x in night.nights
-        {
-            cellData.append(x)
-        }
+        cellData = night.nights.sorted { $0.eventStart > $1.eventStart }
     }
     
     func convertDateToString(date: Date) -> String {

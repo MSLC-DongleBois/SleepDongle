@@ -11,40 +11,18 @@ import Foundation
 
 class SleepyBoye: NSObject {
     
-    // raw data
-    var startDate: Date!
-    var endDate: Date!
-    var events = [Int]()
-    var deepSleep: Int!
-    var lightSleep: Int!
-    var awake: Int!
-    
-    // calculated metrics
-    var deepSleepPercentage: Double!
-    var lightSleepPercentage: Double!
-    var awakePercentage: Double!
-    var sleepScore: Int!
-    
-    // constructor
-    init(night: NightyNight) {
-        super.init()
-        self.startDate = night.eventStart
-        self.endDate = night.eventEnd
-        self.events = night.motionEvents
-        self.deepSleep = 0
-        self.lightSleep = 0
-        self.awake = 0
-        self.deepSleepPercentage = 0.0
-        self.lightSleepPercentage = 0.0
-        self.awakePercentage = 0.0
-        self.sleepScore = 0
-        analyzeEvents()
-        scoring()
-    }
-    
-    // categorical sleep analysis
-    func analyzeEvents() {
-        for event in self.events {
+    static func analyzeNight(data: NightyNight)->NightyNight
+    {
+        var deepSleep: Int = 0
+        var lightSleep: Int = 0
+        var awake: Int = 0
+        var numBuckets: Int = 0
+        var deepSleepPercentage: Double!
+        var lightSleepPercentage: Double!
+        var awakePercentage: Double!
+        var sleepScore: Int!
+        
+        for event in data.motionEvents {
             if event < 5 {
                 deepSleep = deepSleep + 1
             }
@@ -54,21 +32,32 @@ class SleepyBoye: NSObject {
             else {
                 awake = awake + 1
             }
+            
+            numBuckets = numBuckets + 1
         }
-    }
-    
-    func scoring() {
+        
+        deepSleepPercentage = Double(deepSleep) / Double(numBuckets)
+        lightSleepPercentage = Double(lightSleep) / Double(numBuckets)
+        awakePercentage = Double(awakePercentage) / Double(numBuckets)
+        
+        data.deepSleepPercentage = deepSleepPercentage
+        data.lightSleepPercentage = lightSleepPercentage
+        data.awakePercentage = awakePercentage
+        
+        sleepScore = 100
+        
+        sleepScore = sleepScore - (awake * 2)
+        sleepScore = sleepScore - Int(lightSleep / 2)
+        if (sleepScore < deepSleep)
+        {
+            sleepScore = deepSleep
+        }
+        
+        data.sleepScore = sleepScore
+        
+        return data
         
     }
     
-    // return values
-    func getSleep() -> (deepSleep: Int, lightSleep: Int, awake: Int, start: Date, end: Date)
-    {
-        return (self.deepSleep, self.lightSleep, self.awake, self.startDate, self.endDate)
-    }
-    
-    
-    
-
     
 }

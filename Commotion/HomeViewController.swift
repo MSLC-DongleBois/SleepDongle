@@ -10,10 +10,25 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var startTrackingButton: UIButton!
+    @IBOutlet weak var sleepHistoryButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        startTrackingButton.layer.cornerRadius = 4
+        sleepHistoryButton.layer.cornerRadius = 4
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     /*

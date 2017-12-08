@@ -11,6 +11,7 @@ import Charts
 
 class HistoryItemViewController: UIViewController {
 
+    @IBOutlet weak var roundyBoi: PieChartView!
     @IBOutlet weak var chartyBoi: LineChartView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var totalLengthLabel: UILabel!
@@ -30,17 +31,28 @@ class HistoryItemViewController: UIViewController {
         let startHour = Calendar.current.component(.hour, from: (cellData?.eventStart)!)
         drawNightlyGraph(sleepMovements: sleepMovements!, startHour: startHour)
         
+        let sleepQual = ["Deep Sleep", "Light Sleep", "Awake"]
+        
+        var sleepPcts: [Double] = [];
+        sleepPcts.append((cellData?.deepSleepPercentage)!)
+        sleepPcts.append((cellData?.lightSleepPercentage)!)
+        sleepPcts.append((cellData?.awakePercentage)!)
+        drawPieChart(dataPoints: sleepQual, values: sleepPcts)
+        
         if let cellData = cellData {
             let sleepScore = cellData.sleepScore!
+            
             scoreLabel.text = String(sleepScore)
-            let hue: CGFloat = CGFloat(Double(sleepScore) * 120.0 / 100.0)
-            print("Hue: \(hue)")
-            scoreLabel.textColor = UIColor(hue: hue, saturation: 1.0, brightness: 0.75, alpha: 1.0)
+            let hue: CGFloat = CGFloat(Double(sleepScore) * 100.0 / 100.0 / 360.0)
+            scoreLabel.textColor = UIColor(hue: hue, saturation: 1.0, brightness: 0.8, alpha: 1.0)
+            
             let lengthOfSleep: DateInterval = DateInterval(start: cellData.eventStart, end: cellData.eventEnd)
             totalLengthLabel.text = stringFromTimeInterval(interval: lengthOfSleep.duration)
             startLabel.text = timeStringFromDate(date: cellData.eventStart)
             endLabel.text = timeStringFromDate(date: cellData.eventEnd)
+            
             self.title = convertDateToString(date: cellData.eventStart)
+            
             if let userClassification = cellData.userClassification {
                 userClassificationSegmentedControl.selectedSegmentIndex = userClassification
             } else {
@@ -163,6 +175,58 @@ class HistoryItemViewController: UIViewController {
         //data.addDataSet(ds)
         self.chartyBoi.data = data
 
+    }
+    
+    func drawPieChart(dataPoints: [String], values: [Double]) {
+        
+        
+        var entries = [PieChartDataEntry]()
+        for (index, value) in values.enumerated() {
+            let entry = PieChartDataEntry()
+            entry.y = value
+            entry.label = dataPoints[index]
+            entries.append(entry)
+        }
+        
+        // 3. chart setup
+        let set = PieChartDataSet( values: entries, label: "")
+        
+        
+        // this is custom extension method. Download the code for more details.
+        var colors: [UIColor] = []
+        colors.append(UIColor(red: 6/255, green: 80/255, blue: 201/255, alpha: 1))
+        colors.append(UIColor(red: 0/255, green: 150/255, blue: 32/255, alpha: 1))
+        colors.append(UIColor(red: 229/255, green: 101/255, blue: 41/255, alpha: 1))
+        
+        
+        //        for _ in 0..<values.count {
+        //            let red = Double(arc4random_uniform(256))
+        //            let green = Double(arc4random_uniform(256))
+        //            let blue = Double(arc4random_uniform(256))
+        //            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+        //            colors.append(color)
+        //        }
+        
+        set.colors = colors
+        let data = PieChartData(dataSet: set)
+        self.roundyBoi.data = data
+        
+        self.roundyBoi.chartDescription?.text = ""
+        
+        self.roundyBoi.holeRadiusPercent = 0.38
+        //        self.roundyBoi.drawHoleEnabled = false
+        
+        self.roundyBoi.holeColor = UIColor.clear
+        self.roundyBoi.legend.textColor = UIColor.white
+        self.roundyBoi.legend.position = .belowChartCenter
+        
+        self.roundyBoi.legend.drawInside = false
+        self.roundyBoi.legend.wordWrapEnabled = true
+        
+        self.roundyBoi.legend.font = .boldSystemFont(ofSize: 10)
+        self.roundyBoi.transparentCircleColor = UIColor.clear
+        //        self.view.addSubview(chart)
+        
     }
     
     /*
